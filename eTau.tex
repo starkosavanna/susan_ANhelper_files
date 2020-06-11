@@ -1,0 +1,314 @@
+\section{Electron + Hadronic Tau Channel}\label{sec:eTauhad}
+%\textbf{Responsible: E. Laird, Z. Mao, U. Heintz}
+
+\subsection{Event selection}\label{sec:et_selection}
+
+Events must fire the single-electron trigger described in
+Section~\ref{sec:triggers}.  We select reconstructed electrons
+satisfying:
+\begin{itemize}
+  \item $p_T>35~\gev$ and $\vert\eta\vert<2.1$;
+  \item distance of closest approach to the leading 
+sum-$p_T^2$ primary vertex of less than 0.045~cm 
+(transvese) and 0.2~cm (longitudinal);
+  \item passing the loose working point of the e/$\gamma$
+POG MVA ID;
+  \item having no matched conversion nor missing hits;
+  \item within $\Delta R<0.5$ of the HLT electron that fired the trigger.
+
+\end{itemize}
+
+Offline $\tauh$'s are required to have:
+\begin{itemize}
+  \item $p_{T}> 20~\gev$ and $\vert \eta \vert < 2.1$;
+  \item distance of closest approach to the leading;
+sum-$p_T^2$ primary vertex of less than 0.2~cm (longitudinal)
+  \item pass the new Decay Mode Finding requirement as 
+either a 1-prong or 3-prong $\tauh$;
+  \item pass the ``againstElectronTightMVA6'' and
+``againstMuonLoose3'' identification requirements.
+\end{itemize}
+
+We build pairs of electrons and $\tauh$'s in which the electron and
+$\tauh$ are separated by at least $\Delta R > 0.5$.  In events with
+more than one such pair, we select the pair with the two most isolated
+leptons, considering first the electron, and then the $\tauh$.  This
+criterion was seen to have good efficiency for signal samples.  In the
+rare case of multiple such pairs having identical isolation values,
+the reconstructed $p_T$'s are considred, preferring higher values.
+
+After a pair has been chosen for an event, we apply the following
+isolation requirements on the leptons, for an event to enter the
+signal region: electron relative isolation $<0.15$; \tauh isolation
+``byTightIsolationMVArun2v1DBnewDMwLT.''  In order to keep the
+different final states exclusive, an event is rejected if there is an
+additional electron satisfying the above identification requirements
+and with relative isolation $<0.3$, or a muon satisfying the
+identification requirements described in
+Section~\ref{sec:em_selection} with relative isolation $<0.3$.  To
+reduce further possible di-electron events in the $\teth$ channel, an
+event is rejected if there is an opposite-charge electron pair with
+$\Delta R > 0.15$ in which both of the electrons satisfy $p_T >
+15~\gev$, $\vert \eta \vert < 2.5$, the e/$\gamma$ POG ``veto'' ID,
+and relative isolation $<0.3$. To further reduce backgrounds, we require 
+the electron and $\tauh$ to have opposite charge. The selection set 
+mentioned above is defined as preselection.
+
+Following the preselection, as for the $\tmth$ channel, the signal 
+region is defined as having
+\begin{itemize}
+  \item $\cos{\Delta \phi (e,\tauh)}<-0.95$;
+  \item $\ETslash>30~\gev$;
+  \item $\cos{\Delta \phi (e,\ETslash)} > 0.9~\text{or}~(\cos{\Delta \phi (\tauh,\ETslash)} > 0.9~\text{and}~m_{\text{T}}(e,\ETslash) > 150~\gev)$;
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose).
+\end{itemize}
+
+The distributions of these variables after preselection, and after
+selection requirements on the other variables, are shown in
+Figure~\ref{fig:et_nm1_distributions}.
+\begin{figure}\centering
+  \includegraphics[width=0.31\textwidth]{figures/n_1/et/met_et}
+  \includegraphics[width=0.31\textwidth]{figures/n_1/et/cosDPhi_et}
+  \includegraphics[width=0.31\textwidth]{figures/n_1/et/nb_et}
+  \includegraphics[width=0.31\textwidth,page=1]{figures/n_1/et/cosDPhi_lep_met_et}
+  \includegraphics[width=0.31\textwidth,page=2]{figures/n_1/et/cosDPhi_lep_met_et}
+
+  \caption{\label{fig:et_nm1_distributions} (Data driven QCD with only statistical uncertainties) 
+Distributions of the variables used for \teth signal selection, after all other signal selection requirements 
+on variables other than the one plotted. Top row plots are made with data driven W+Jets in distributions of: 
+\ETslash (top left), $\cos{\Delta \phi (e, \tauh)}$ (top middle, with $\cos{\Delta \phi (e, \tauh)} > 0$) 
+and $n_b$ (top right). Bottom row plots are made with MC W+Jets in distributions of: 
+$\cos{\Delta \phi (e, \ETslash)}$ (bottom left) and $\cos{\Delta \phi (\tauh, \ETslash)}$ (bottom right).}
+\end{figure}
+
+The Standard Model processes considered as backgrounds are Drell-Yan,
+di-boson production, top quark single and pair production, W+jets
+production, and QCD multi-jet production.
+
+\subsection{Genuine dilepton events}
+
+Studies of simulated events indicate that for Drell-Yan process, top
+quark single and pair production, and di-boson production, the
+reconstructed and selected electrons and hadronic taus are typically
+associated with genuine simulated leptons.  The nominal expected event
+rates are estimated by scaling the simulated samples by the best
+available cross sections, listed in Table~\ref{tab:mc_samples}, and by
+the integrated luminosity of the data samples.
+
+\subsubsection{Drell-Yan process}
+Due to large W+Jets and QCD contamination, as shown in the left panel of 
+Figure~\ref{fig:et_dy_tt} with the following selections:
+\begin{itemize}
+  \item $\ETslash<30~\gev$;
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose);
+  \item $\cos{\Delta \phi (e,\ETslash)} > 0.9~\text{or}~\cos{\Delta \phi (\tauh,\ETslash)} > 0.9$;
+  \item 60 GeV $<$ \meffetau $<$ 150 GeV,
+\end{itemize}
+we use the Drell-Yan rate systematic uncertainty (5\%) estimated from
+the \tetm final state in~\ref{sec:em_DY} for its higher Drell-Yan 
+purity. However, we cross check this here and compare the Drell-Yan 
+rate between data and MC:
+\begin{equation}\label{eq:et_DY}
+\frac{\text{data - non-Drell-Yan backgrounds}}{\text{MC Drell-Yan}} = 0.95 \pm 0.05\%\quad,
+\end{equation}
+which agrees with the measurement in in~\ref{sec:em_DY}. 
+
+
+\subsubsection{$t\bar{t}$ and single top processes process}
+For \teth, we estimate the \ttbar + single top production rate
+systematics (1\%), with the top pt reweighting as described in 
+~\ref{sec:mt_tt}, from \tetm final state, as described in
+ ~\ref{sec:em_tt}, for its higher top purity.  However 
+we cross check this in a \teth top-rich region, defined by 
+the following selections and shown in the right panel of 
+Figure~\ref{fig:et_dy_tt}:
+\begin{itemize}
+  \item $\cos{\Delta \phi (e,\tau_{h})}<-0.95$;
+  \item $\ETslash>30~\gev$;
+  \item $\cos{\Delta \phi (e,\ETslash)} > 0.9~\text{or}~(\cos{\Delta \phi (\tau_{h},\ETslash)} > 0.9~\text{and}~m_{\text{T}}(e,\ETslash) > 150~\gev)$;
+  \item at least one jet with $p_T>30\gev$ tagged as a b-jet (CSV loose).
+\end{itemize}
+The $t\bar{t}$ + single top data/MC overall agreement is estimated to be:
+\begin{equation}\label{eq:et_tt}
+\frac{\text{data - non $t\bar{t}$ + single top backgrounds}}{\text{MC $t\bar{t}$ + single top}}  =  0.96 \pm 0.06 \quad,
+\end{equation}
+which agrees with the measurement in in~\ref{sec:em_DY}. 
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/ControlRegions/DY_check_et}
+  \includegraphics[width=0.45\textwidth]{figures/ControlRegions/ttbar_check_et}
+  \caption{\label{fig:et_dy_tt}(Data driven W+Jets and QCD with only statistical uncertainties) Distributions of \meffetau. Left:
+    validation region with $\ETslash<30~\gev$, $n_b = 0$ and $60 \gev<$  \meffetau $<$ 150 GeV.  Right:
+    validation region with $n_b\geq1$.}
+\end{figure}
+
+\subsubsection{Di-boson process}
+Di-boson processes are a relatively small background in the electron + 
+hadronic tau channel. They are estimated directly from simulation with 
+a 20\% systematic uncertainty measured from the electron + muon channel 
+in section \ref{section:diBoson}.
+    
+\subsection{QCD multi-jet background}\label{sec:etau_qcd}
+Similar as  the \tmth channel, we construct a data-driven template for
+the shape of the QCD multi-jet background, i.e. the processes lacking
+prompt leptons.  Based on the charge of the final state, the electron 
+relative isolation and \tauh isolation, we split the events into 
+four regions shown in Figure~\ref{fig:ABCDEF} and described below:
+\begin{itemize}
+  \item A (Signal) Region: e and \tauh have opposite charge, e relative isolation is less than $0.15$, and \tauh pass "Tight" isolation requirement.
+  \item B Region: e and \tauh have same charge, e relative isolation is less than $0.15$, and \tauh pass "Tight" isolation requirement.
+  \item E Region: e and \tauh have opposite charge, e relative isolation is between $0.15$ and $1.0$, and \tauh fail "Tight" isolation requirement.
+  \item F Region: e and \tauh have same charge, e relative isolation is between $0.15$ and $1.0$, and \tauh fail "Tight" isolation requirement.
+\end{itemize}
+
+Table \ref{table:SF_QCD_et} shows the yields of data and MC samples in regions B 
+and F used for the calculation of $f_\mathrm{LT}^\mathrm{QCD}$.
+
+{\renewcommand{\arraystretch}{1.3}%
+\begin{table}
+   \caption{\label{table:SF_QCD_et} Event yields in regions B and F used for the calculation of $f_\mathrm{LT}^\mathrm{QCD}$.}
+   \centering{
+     \begin{tabular}{ | l | c | c | }
+        \hline \hline
+        Process                         & region B      & region F      \\ \hline
+        Z + jets                        & 151 $\pm$ 26  & 0 $\pm$ 0     \\ \hline
+        $t\bar{t}$                      & 40 $\pm$ 4    & 2.0 $\pm$ 0.8 \\ \hline
+        W + jets                        & 418 $\pm$ 94  & 3 $\pm$ 2     \\ \hline
+        DiBoson                         & 15 $\pm$ 2    & 0.1 $\pm$ 0.0 \\ \hline
+        non-QCD background              & 624 $\pm$ 98  & 5 $\pm$ 2     \\ \hline
+        Data                            & 2265          & 1539          \\ \hline \hline
+        Data - non-QCD background       & 1641 $\pm$ 98 & 1539          \\ \hline
+        $f_\mathrm{LT}^\mathrm{QCD}$    &  \multicolumn{2}{c|}{1.07 $\pm$ 0.08} \\ \hline
+     \end{tabular}
+   }
+ \end{table}}
+
+To check whether if the QCD shape  in the anti-isolated region correctly 
+models the QCD shape in the isolated region, we compare the 
+observation and background estimation in region B with the QCD shape 
+taking from region F and normalized to the QCD in region B.  
+An example of this test is shown in the left panel of 
+Fig.~\ref{fig:et_dataDrivenChecks}. Here, W+jets 
+is estimated directly from MC simulations. Overall, the data and 
+estimated background agrees reasonably. Due to low statistics of 
+the W+jets MC sample, some bins disagree by 20\%.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/et/regionB_et}
+  \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/et/WJets_SF_et}
+  \caption{\label{fig:et_dataDrivenChecks}(Only statistical uncertainties are included) Distributions of \meffetau. Left:
+    in region B with signal region selections (data driven QCD and MC based W+jets).  Right:
+    in region A' with signal region like selections (data driven QCD and W+jets).}
+\end{figure}
+
+\subsection{W+jets background}
+\label{sec:et_w_bkg_validation}
+
+Similar as done in the \tmth channel,  we construct 
+a data-driven template for the shape of the W+jets background in a control 
+region with high W+jets purity. Based on the charge of the final state and 
+\tauh isolation, we split the events into four regions shown in 
+Fig.~\ref{fig:ABCDEF} and described below:
+\begin{itemize}
+  \item A (Signal) Region: e and \tauh have opposite charge, e relative isolation is less than $0.15$, and \tauh pass "Tight" isolation requirement.
+  \item B Region: e and \tauh have same charge, e relative isolation is less than $0.15$, and \tauh pass "Tight" isolation requirement.
+  \item C Region: e and \tauh have opposite charge, e relative isolation is less than $0.15$, and \tauh pass "VeryLoose" isolation requirement but fail "Tight" isolation requirement.
+  \item D Region: e and \tauh have same charge, e relative isolation is less than $0.15$, and \tauh pass "VeryLoose" isolation requirement but fail "Tight" isolation requirement.
+\end{itemize}
+
+In region C, W+jets events are estimated by subtracting non W+jets events
+with genuine leptons (estimated by simulation) and data-driven QCD events 
+(estimated from region E with a scale factor measured between D and F) 
+bin-by-bin from data. W+jets events in the signal region most likely 
+consists of one genuine lepton (electron in this channel) with a jet 
+faking a \tauh. Thus, W+jets event in the signal region can be estimated 
+by applying a "jet to tau fake rate" to the estimated W+jets events in region C.
+
+To properly estimate the most relevant (closest to our signal region as possible) 
+"jet to tau fake rate" from data, we construct a W+jets rich region with the 
+following selections:
+\begin{itemize}
+  \item $\cos{\Delta \phi (e,\tau_{h})}<-0.95$
+  \item $\ETslash>30~\gev$
+  \item $0.5 < \cos{\Delta \phi (e,\ETslash)} < 0.9~\text{and}~55~\gev~< m_{\text{T}}(e,\ETslash) < 120~\gev$
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+\end{itemize}
+The "jet to tau fake rate" is estimated the same way as in Eq.~\ref{eq:fakeRate}.
+Region A' is shown in the right panel of Fig.~\ref{fig:et_dataDrivenChecks} 
+with the "jet to tau fake rate" estimated as: $f_{\text{jet}\rightarrow\tau} = 0.20 \pm 0.03$.
+
+\subsection{Validation of Background Estimations}
+Additional to the validation tests shown in Fig.~\ref{fig:et_dy_tt}, a test 
+to simultaneously check the data driven QCD and W+jets estimations is performed 
+by reverting the $\cos{\Delta \phi (e,\tauh)}$ cut in the following configuration:
+\begin{itemize}
+  \item $ -0.95 < \cos{\Delta \phi (e,\tauh)} < 0$
+  \item $\ETslash>30~\gev$
+  \item $\cos{\Delta \phi (e,\ETslash)} > 0.9~\text{or}~(\cos{\Delta \phi (\tauh,\ETslash)} > 0.9~\text{and}~m_{\text{T}}(e,\ETslash) > 150~\gev)$
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+\end{itemize}
+
+Figure~\ref{fig:revertCosDPhi_et} shows the distributions of \meffetau, \ETslash, 
+electron \pt and \tauh \pt in region A with the above set of selections. 
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth,page=3]{figures/ControlRegions/revertCosDPhi_et}
+  \includegraphics[width=0.45\textwidth,page=4]{figures/ControlRegions/revertCosDPhi_et}\\
+  \includegraphics[width=0.45\textwidth,page=1]{figures/ControlRegions/revertCosDPhi_et}
+  \includegraphics[width=0.45\textwidth,page=2]{figures/ControlRegions/revertCosDPhi_et}
+  \caption{\label{fig:revertCosDPhi_et} (Data driven W+Jets and QCD with only statistical uncertainties)
+ Distributions with $-0.95 < \cos{\Delta \phi (e,\tauh)} < 0$ selection. Top: left: 
+\meffetau right: \ETslash. Bottom: left: e \pt right: \tauh \pt.}
+\end{figure}
+
+%%Figure~\ref{fig:signalRegion_et} shows the distributions of \meffmtau in 
+Figure~\ref{fig:SignalRegionPlot_a} shows the distributions of \meffmtau in 
+the signal region.% with data blinded.
+
+\begin{figure}\centering
+  %% \includegraphics[width=0.6\textwidth,page=1]{figures/signalRegion/et_blind}
+  \includegraphics[width=0.6\textwidth,page=1]{figures/signalRegion/et}
+  \caption{\label{fig:signalRegion_et} (Data driven W+Jets and QCD with only statistical uncertainties)
+ \meffmtau distribution with signal region selections.}
+\end{figure}
+
+
+\iffalse
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/Data_MC_Comparison/et_puweight_OS_signalRegionReversePZeta_1and3prong_lessThan-0p8}
+  \caption{\label{fig:et_meff_flipped_pz} \teth channel: the
+    distribution of reconstructed parent mass, \meffetau, in the
+    W-validation region described in
+    Section~\ref{sec:et_w_bkg_validation}.}
+\end{figure}
+
+\clearpage
+\subsection{Overlays of observations and SM predictions}
+\label{sec:et_overlays}
+
+The expected SM event yields in the signal region are shown in
+Figure~\ref{fig:etau_sm_template_and_mt}.
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/et_puweight_OS_signalRegion_MCWJets_1and3prong}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/et_puweight_OS_signalRegion_1and3prong_mt}
+  \caption{\label{fig:etau_sm_template_and_mt} Left: predicted
+    background yields and observed event yields in the \teth channel
+    after signal selection.  Right: the distribution of transverse
+    mass.}
+\end{figure}
+
+Distributions of \pt and $\eta$ are shown in Figure~\ref{fig:etau_sr_pt_eta}.
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/et_puweight_OS_signalRegion_1and3prong_ePt}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/et_puweight_OS_signalRegion_1and3prong_eEta} \\
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/et_puweight_OS_signalRegion_1and3prong_tPt}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/et_puweight_OS_signalRegion_1and3prong_tEta}
+  \caption{\label{fig:etau_sr_pt_eta} Distributions, after \teth final
+    selection, of electron \pt (top left), electron pseudo-rapidity
+    (top right), $\tau$ \pt (bottom left), $\tau$ pseudo-rapidity
+    (bottom right).}
+\end{figure}
+
+\fi
+

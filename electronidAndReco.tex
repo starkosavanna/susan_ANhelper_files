@@ -1,0 +1,67 @@
+\subsection{Electron Reconstruction and Identification}\label{eID}
+%\textbf{Responsible: Z.Mao E.Laird}
+
+Electrons are reconstructed by associating a track reconstructed in the silicon detector with a 
+cluster of energy in the electromagnetic calorimeter (ECAL). One of the main challenges for electron 
+reconstructions in the CMS detector arise from bremsstrahlung radiation in the silicon tracker. 
+Additional to the energy loss of the electrons through radiation, radiated photons are spread  over 
+several crystals of the ECAL detector along the electron trajectory, mostly in the $\phi$ direction  
+(the magnetic field is in the z direction). 
+
+
+To measure the initial energy of the electron accurately, two algorithms  based on energy clustering, 
+``Hybrid'' for the barrel and  ``multi-5$\times$5'' for the endcaps, are used to measure the energy of 
+electrons and photons. Electron tracks are reconstructed by matching hits in the silicon 
+strip tracker to seed hits in the pixel  detector based on the combinatorial Kalman filter method. 
+A pixel seed is composed of two or three pixel hits compatible with the beam spot. Once the hits are 
+collected, a Gaussian Sum Filter (GSF) fit is performed to estimate the track parameters. For each GSF 
+track, several PF clusters, corresponding to the electron at the ECAL surface and the bremsstrahlung 
+photons emitted along its trajectory, are grouped together. Most of the bremsstrahlung photons are 
+recovered in this way. In order to minimize the many possible trajectories due to different 
+combinations of hits, the  track that best matches an energy supercluster in the ECAL is chosen to 
+be the reconstructed track \cite{electron8TeV}.
+
+The preselection of primary electron candidates requires  good geometrical matching and good
+agreement between the  momentum of the track and the energy of the ECAL  supercluster. Three
+quantities are used to estimate the geometrical matching: $\Delta \eta_{in} = \eta_{sc}
+-\eta^{Track}_{vertex}$;  $\Delta \phi_{in} = \phi_{sc} -\phi^{Track}_{vertex}$ and a MVA technique 
+that combines information on track observables, the electron PF cluster observables, and the 
+association between the two . The $\eta_{sc}$ and $\phi_{sc}$ coordinates correspond to  the 
+supercluster position and are measured using an energy weighted algorithm. The $\eta^{Track}_{vertex}$ 
+and  $\phi^{Track}_{vertex}$ coordinates are the position of the track at the interaction vertex 
+extrapolated,  as a perfect helix, to the ECAL detector. 
+
+Electron selections have two main components, electron  identification and electron isolation. 
+In this analysis we use the MVA electron identification. 
+The MVA cuts used to define the 80\% and 90\% signal efficiency working points are summarized in Table~\ref{eIDtable}. 
+
+\begin{table}[ht]
+\begin{center}
+ \caption{Electron ID Selections.\label{eIDtable}}
+ \begin{tabular}{| l | c | c | c |}
+ \hline\hline
+       Category                             & MVA$_{\textrm{min cut}}$ (80\% signal eff)    & MVA$_{\textrm{min cut}}$ (90\% signal eff)  \\[0.5ex] \hline
+       Barrel ($\eta < 0.8$) $p_{T}>10$     & 0.941                                         & 0.837             	\\
+       Barrel ($\eta > 0.8$) $p_{T}>10$     & 0.899                                         & 0.715             	\\
+       Endcap $p_{T}>10$                    & 0.758                                         & 0.357             	\\
+ \hline
+ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+
+The electron relative combined isolation is defined as below:
+\begin{equation}
+\text{relative combined isolation}~= \frac{\Sigma p_T^{\text{charged had}} + \text{max}[0, \Sigma p_T^{\text{neutral had}} + 
+\Sigma p_T^{\gamma} - 0.5\times\Sigma p_T^{\text{charged hadrons from PU}}]}{p_T^{\text{electron}}}
+\end{equation}
+where the sums run over the charged hadron candidates, neutral hadrons and photons, within a $\Delta R < 0.4$ around 
+the electron direction. The charged hadron candidates are required to originate from the vertex of the event of 
+interest, and $p_T^{\text{charged hadrons from PU}}$ is a correction related to event pileup.
+
+
+In all channels, the identification and isolation used follows the POG recommended criteria. In order to improve the signal 
+acceptance, especially at high mass,  the 90\% efficiency working point of the MVA electron ID is chosen.
+%The electron trigger/identification efficiencies and scale factors used in these analyses have been taken from:
+%``https://twiki.cern.ch/twiki/bin/view/CMS/MultivariateElectronIdentificationRun2"
+

@@ -1,0 +1,39 @@
+\subsection{\texorpdfstring{$\MET$}{Missing transverse energy}}\label{ss:met}
+%\textbf{Responsible: Z.Mao E.Laird}
+ 
+The presence of neutrinos in $\tau$ decays causes imbalance of total momentum as they 
+escape from the detector without producing any direct response. The magnitude of the 
+negative vector sum of the visible transverse momentum is known as missing transverse 
+energy, denoted $E^{miss}_{T}$ ~\cite{MET}.
+
+Missing transverse energy is one of the most important observables for discriminating 
+the signal events from background events which do not contain neutrinos, such as QCD 
+multijet and DY$\to\mu\mu$/ee events. Thus, we require events with $E^{miss}_{T} >$ 
+30 GeV in all channels.
+
+Anomalous high-$E^{miss}_{T}$ events can be due to various phenomena. For example, in 
+the ECAL, spurious deposits may appear due to particles striking sensors in the ECAL 
+photodetectors, in the HCAL spurious energy can arise due to noise in the hybrid 
+photodiode (HPD) and readout box (RBX) electronics~\cite{METFilters}. In order to identify and suppress 
+such high-$E^{miss}_{T}$ events, the following POG recommended filters are applied to 
+the analysis:
+\begin{table}[ht]
+\begin{center}
+ \caption{MET Filters.\label{tab:metFilter}}
+ \begin{tabular}{|c|}
+ \hline\hline
+       primary vertex filter \\
+       beam halo filter	\\
+       HBHE noise filter \\
+       HBHEiso noise filter	\\
+       ECAL TP filter \\
+       ee badSC noise filter \\
+       badMuon filter\\
+       badCharged hadron filter\\
+ \hline
+ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+
+These filters are $\approx 99$\% efficient for both the signal and background MC samples.

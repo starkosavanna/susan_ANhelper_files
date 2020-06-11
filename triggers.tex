@@ -1,0 +1,213 @@
+\section{Triggers}\label{sec:triggers}
+%\textbf{Responsible: E. Laird, Z. Mao, A. Florez, F. Gonzalez} 
+
+%We are using the triggers in Table~\ref{triggertable} for the analysis with 19.4 fb$^{-1}$ of data. 
+
+For the \tlth final states, we use single lepton triggers instead of
+$l\times\tau_{h}$ cross-triggers to maintain a similar strategy across
+channels and also allow us to use the $\tau_{h}$ isolation sidebands
+as control and validation samples. For the \tetm final state, any
+trigger with iso-muon requirement, either a e-$\mu$ cross-trigger or
+single-muon trigger, would eliminate the isolation sideband for QCD
+estimation. Hence, we use the same single-electron trigger as for the
+\teth final state. Trigger paths are summarized in
+Table~\ref{tab:triggernames}. Note this constrains the object ID and
+phase space that we are studying. For example, the use of these
+triggers requires $p_{T}$ cuts of 35 GeV, 35 GeV, and 70 GeV for our
+leading light leptons and $\tau_{h}$'s in the \tmth, \teth, and \thth
+channels, respectively. We note that although the use of single lepton triggers instead of
+$l\times\tau_{h}$ cross-triggers force us to increase the offline $p_{T}$ cuts, 
+it doesn't affect our analysis since our signal is characterized by high-p$_{T}$ 
+leptons. 
+%Collision data events firing the {\bf HLT\_DoubleMediumIsoPFTau35\_Trk1\_v*} trigger are used for the 
+Collision data events firing the {\bf HLT\_DoubleMediumIsoPFTau35\_Trk1\_eta2p1\_Reg*} trigger for Run BCDEFG and {\bf HLT\_DoubleMediumCombinedIsoPFTau35\_Trk1\_eta2p1\_Reg}  for Run H are used for the $\tau_{h}\tau_{h}$ channel. The offline-$p_{T}(\tau_{h})$ threshold used in this channel is driven by the trigger. The behaviour of this trigger as function of $p_{T}(\tau_{h})$ is explained in section~\ref{sec:tauTrigger}. 
+
+\begin{table}[ht]
+\begin{center}
+  \caption{The trigger paths used to collected the data.  Emulated
+    trigger paths, in particular those most similar to the paths used
+    to collect the data, are applied to the simulated
+    samples.\label{tab:triggernames}}
+  \begin{tabular}{| l | c |}
+  \hline
+       Channel                      & Trigger Path                                   \\[0.5ex] \hline
+       \thth (data, runs BCDEFG)    & HLT\_DoubleMediumIsoPFTau35\_Trk1\_eta2p1\_Reg \\
+       \thth (data, run H)          & HLT\_DoubleMediumCombinedIsoPFTau35\_Trk1\_eta2p1\_Reg \\
+       \tmth (data and MC)          & HLT\_IsoMu24                                   \\
+       \teth, \tetm (data and MC)   & HLT\_Ele27\_eta2p1\_WPTight                    \\
+  \hline
+  \end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Single Lepton Trigger Efficiency}\label{sec:lepTrigger}
+%\textbf{Responsible: E. Laird, Z. Mao} 
+
+
+The single electron and muon trigger efficiencies are measured
+using a tag and probe method where we selected events with at 
+least one electron and one muon pair satisfying the following
+requirements:
+
+For electrons:
+\begin{itemize}
+  \item $p_T > 13~\gev$, $|\eta| < 2.1$, isolation $< 0.15$, $d_{xy}<0.045$~cm, $d_{z}<0.2$~cm
+  \item passing electron MVAWP90 ID
+  \item no matched conversions
+  \item number of missing hits = 0
+\end{itemize}
+
+For muons:
+\begin{itemize}
+  \item $p_T > 10~\gev$, $|\eta| < 2.1$, isolation $< 0.15$, $d_{xy}<0.045$~cm, $d_{z}<0.2$~cm
+  \item passing "Medium" muon ID
+\end{itemize}
+
+For the pair:
+\begin{itemize}
+  \item $\Delta$R(\tetm) $>$ 0.3
+  \item choose the most isolated pair
+  \item choose the opposite sign pair
+  \item events are rejected if there is an additional electron with isolation $<$ 0.3, 
+        or an additional muon with isolation $<$ 0.3.
+\end{itemize}
+
+\subsection{Single Electron Trigger Efficiency}\label{sec:eleTrigger}
+%\textbf{Responsible: E. Laird, Z. Mao} 
+
+To measure the single-electron trigger efficiency, after the
+preselection mentioned above, we select (tag) events with a
+single-muon trigger (HLT\_IsoMu24) with the offline muon, requiring $p_T > 24~\gev$,
+ matching the HLT muon that fired the trigger.  Then, the trigger efficiency is
+defined at the fraction of events which also pass (probe) the
+single-electron trigger (HLT\_Ele27\_eta2p1\_WPTight).
+
+The efficiency curves of the single-electron triggers, measured
+vs. electron \pt, are shown in Figure~\ref{fig:eturnon}. A
+$p_{T}>35$~\gev cut is motivated to avoid the turn-on region. The 
+difference in trigger efficiency between data and simulation is 
+measured in different detector sections: barrel ($|\eta| < 1.479$) 
+and endcap ($1.479 < |\eta| < 2.1$). As shown, this difference has 
+little dependence on the electron \pt. Thus, a flat line is fitted 
+on this difference and we obtained a correction of 1.002 (0.957) 
+for simulated events when the electron is in the barrel (endcap) 
+region. Overall, we assign a 5\% systematic uncertainty for the 
+single electron trigger efficiency corrections due to the outliers 
+in the fit.
+
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/triggerStudy/eleTrigTurnOnCurve_ePt_em_WP90_barrel}
+  \includegraphics[width=0.45\textwidth]{figures/triggerStudy/eleTrigTurnOnCurve_ePt_em_WP90_endcap}
+  \caption{\label{fig:eturnon} The efficiency vs. \pt curves of the
+    single-electron triggers used. Left column: $|\eta|<1.479$. Right column: $|\eta|>1.479$.}
+\end{figure}
+
+\subsection{Single Muon Trigger Efficiency}\label{sec:muTrigger}
+%\textbf{Responsible: E. Laird, Z. Mao} 
+
+To measure the single-muon trigger efficiency, after the preselection
+mentioned above, we select (tag) events with a single-electron trigger 
+(HLT\_Ele27\_eta2p1\_WPTight) with the offline electron, requiring 
+$p_T > 28~\gev$, match the HLT electron that fired the trigger. Then, 
+the trigger efficiency is defined at the fraction of events which also 
+pass (probe) the single-muon trigger (HLT\_IsoMu24).
+
+The efficiency curves of the single-muon triggers, measured vs. muon
+\pt, are shown in Figure~\ref{fig:muturnon}. A $\pt>35$~\gev cut is
+motivated to avoid the turn-on region and to be synchronized with the \teth 
+channel. Similar to the single electron trigger, we measured the difference 
+in trigger efficiency between data and simulated events in several regions: 
+barrel ($|\eta| < 0.8$); middle ($0.8 < |\eta| < 1.24$); and endcap 
+($1.24 < |\eta| < 2.1$). From the flat fit, the corrections for simulated 
+events are found to be 0.973, 0.956 and 0.974 for events with muons in 
+the $\eta$ regions mentioned above. We assign a 5\% (10\%) single muon trigger 
+efficiency corrections systematics for muons in the central (endcap) region 
+to accommodate the few outliers in the fit.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/triggerStudy/muonTrigTurnOnCurve_mPt_em_WP90_barrel}
+  \includegraphics[width=0.45\textwidth]{figures/triggerStudy/muonTrigTurnOnCurve_mPt_em_WP90_middle}
+  \includegraphics[width=0.45\textwidth]{figures/triggerStudy/muonTrigTurnOnCurve_mPt_em_WP90_endcap}
+  \caption{\label{fig:muturnon} The efficiency vs. \pt curves of the
+    single-muon triggers used. Top left: $|\eta|<0.8$.  Top right: $0.8<|\eta|<1.24$. Bottom: $|\eta|>1.24$.}
+\end{figure}
+
+
+\subsection{Di-Tau Trigger Efficiency}\label{sec:tauTrigger}
+%\textbf{Responsible:A. Florez, F. Gonzalez} 
+
+The efficiency of the $\tau_{h}\tau_{h}$ trigger is measured using 
+$Z\to\tau\tau\to\mu\tau_{h}$ events.  The $\tau_{h}$ candidates 
+reconstructed in the selected $Z\to\tau\tau\to\mu\tau_{h}$ events are 
+required to pass the same $\tau_{h}$ identification used for the final
+analysis and which will be described in more detail in the sections to follow. The 
+``denominator" selections used to define the $Z\to\tau\tau\to\mu\tau_{h}$ control sample 
+are summarized below:
+
+\begin{itemize}
+  \item Events must fire the HLT{\_}IsoMu24 trigger 
+  \item Exactly $1$ global $\mu$ with $|\eta| < 2.1, p_{T} > 24$ GeV
+  \item ``isMediumMuon"
+  \item Muon best track d$_{xy}$ $<$ 0.2~cm , d$_{z}$ $<$ 0.045~cm w.r.t. PV
+  \item Relative $\mu$ isolation (with $\delta\beta$ corrections) $< 0.1$
+  \item $\ge 1$ HPS $\tau_{h}$ with $|\eta| < 2.1, p_{T} > 20$ GeV
+%  \item d$_{xy}$ w.r.t PV $<$ 0.2 , d$_{z}$ w.r.t PV $<$ 0.045 
+  \item Muon veto: ``againstMuonTight3"
+  \item Electron veto: ``againstElectronVLooseMVA6"
+  \item Decay mode finding with 1 or 3 signal charged hadrons %(1, 2, or 3 signal charged hadrons; see section 5)
+  \item Isolation: ``byTightIsoMVArun2v1DBnewDMwLT"
+  \item $p_{T} >$ 5. GeV for leading track of $\tau_{h}$ with d$_{xy} <$ 0.2~cm and d$_{z} <$ 0.045~cm w.r.t. PV
+  \item $\Delta R(\mu,\tau_{h}) > 0.5$
+  \item $Q(\mu) \times Q(\tau_{h}) < 0 $
+  \item $40 < m(\mu, \tau_{h}) < 80$ GeV
+  \item $m_{T}(\mu,\MET) < 30$ GeV
+  \item 0 jets tagged as b-jets
+  \item 0 tagged electrons
+\end{itemize}
+The numerator is defined by additionally requiring those events to 
+pass the \\ 
+HLT{\_}IsoMu21{\_}eta2p1{\_}MediumIsoPFTau32{\_}Trk1{\_}eta2p1{\_}Reg{\_}v trigger.
+The efficiency is measured for each $\tau_{h}$ leg individually and
+parametrized as a function of $p_{T}$. 
+
+\begin{figure}\centering
+  \includegraphics[width=0.5\textwidth]{figures/triggerStudy/DiTauTriggerEfficiency_full_lumi.png}
+  \caption{\label{fig:triggertau} The per-leg $\tau_{h}$ trigger efficiency as a function of p$_{T}(\tau_{h})$ for data obtained by requiring $\mu-\tau_{h}$ region.}
+\end{figure}
+
+The fit to the efficiency curve in Figure ~\ref{fig:triggertau} is performed with the following function:
+
+\begin{equation}
+pdf=P[0]+P[1]\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{y}e^{-\frac{t^{2}}{2}}dt    
+\end{equation}
+
+where 
+
+\begin{equation}
+y=\frac{\sqrt{x}-\sqrt{P[2]}}{2P[3]}, \hspace{1cm} P[2]=\mu, P[3]=\sigma 
+\end{equation}
+
+We do not apply the trigger in MC, but instead model the correct per leg trigger efficiency observed in data by weighing the predictions from simulation using the fit of 
+the trigger efficiency curve in data (black solid curve in the plot). The per-leg $\tau_{h}$ trigger efficiency is approximately 90\% at p$_{T}(\tau_{h})=60$ GeV and plateaus to about 95\% 
+efficiency at 70 GeV. To be conservative, we assign a 5\% systematic uncertainty, per $\tau_{h}$ leg, on the trigger efficiency due to the ineffiency of the trigger at $p_{T} > 70$ GeV. 
+
+\iffalse
+\begin{table}[!htpb]
+   \caption{Data and background yields in the $Z\to\tau\tau\to\mu\tau_{h}$ control sample used to measure the per leg trigger efficiency for the 
+$\tau_{h}\tau_{h}$ trigger.}
+   \centering{
+    \begin{tabular}{| l | c |}
+       \hline\hline
+       Sample             & Events         \\ [0.5ex] \hline
+       Data               &19578           \\
+       t $\overline{t} $  &170.881$\pm$13.072          \\
+       W+Jets           &2127.76$\pm$46.128          \\
+       Z+Jets           &12218.5$\pm$110.544        \\
+       QCD               &4003.93$\pm$63.277       \\
+      \hline\hline
+     \end{tabular}
+   }        
+   \label{table:BGYieldtable} % is used to refer this table in the text
+ \end{table}
+\fi

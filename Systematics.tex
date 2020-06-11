@@ -1,0 +1,185 @@
+\section{Systematics}\label{sec:systematics}
+%\textbf{Responsible: T. Kamon, E. Laird, M. Dalchenko}
+%\iffalse
+The following systematics have been considered (summarized in Table~\ref{table:SystematicsTable}):
+
+\begin{itemize}
+%  \item \textbf{Parton Distribution Functions (PDF):} The systematic effect due to imprecise knowledge of the parton 
+%distribution functions is determined by following the PDF4LHC recommendation and comparing various PDF sets with the 
+%CTEQ6.6L, MSTW2008nnlo, and NNPDF20 PDF with the 
+%default PDF and variations within the family of parametrization \cite{CTEQ}. The maximal deviation from the central value is used the overall 
+%systematic due to PDFs. We obtain a value of 6.5\%.
+%
+%  \item \textbf{Initial State Radiation (ISR) and Final State Radiation (FSR):} The systematic effect due to imprecise 
+%modeling of initial and final state radiation is determined by re-weighting events to account for effects such as 
+%missing a terms in the soft-collinear approach \cite{softCollinear} and missing NLO terms in the parton shower approach \cite{partonShower}. We 
+%obtain uncertainties of 0.9\% and 1.2\% for ISR and FSR respectively.
+
+  \item \textbf{Luminosity:} We consider a 2.5\% uncertainty on the measured luminosity \cite{REFLUMI}. It is considered 100\% correlated across MC based 
+backgrounds within a channel. It is also considered 100\% correlated across channels (for MC based backgrounds).
+
+  \item \textbf{Trigger, Reconstruction, and Selection:} 
+  An overall uncertainty is applied for the trigger uncertainties determined on the 
+  correction factors described in Section 3 which are measured using tag-and-probe methods. 
+  %We consider 6.8\% uncertainty per hadronic tau leg \cite{CMS-PAS-TAU-11-001}.
+  %Scale factors for $\tau_{h}$ identification are taken from the tau POG and obtained using a fit of data in a Z$\to\tau\tau$ enhanced region and fixing the cross section to that measured using ee/$\mu\mu$. 
+  %We consider 5\% uncertainty per hadronic tau leg in 
+  To be conservative, we assign a 5\% systematic uncertainty, per $\tau_{h}$ leg, on the trigger efficiency in the $\tau_{h}\tau_{h}$ channel due to the ineffiency of the trigger at $p_{T} > 70$ GeV. 
+  %the $\tau_{h}\tau_{h}$ channel 
+  Each leg is 100\% correlated to the other. The trigger uncertainty is considered 100\% correlated across MC based backgrounds within 
+a channel. It is also considered 100\% correlated across channels using the same trigger. For the case of the $\tau_{h}\tau_{h}$ trigger, where the trigger 
+efficiency uncertainty is measured per $\tau_{h}$ leg, the total trigger uncertainty is calculated by assuming both legs are 100\% correlated. For example, if the 
+per leg $\tau_{h}$ trigger uncertainty is 5\%, the total trigger uncertainty for the $\tau_{h}\tau_{h}$ channel will be 10\% ($2\cdot 5$\%). A 5\% uncertainty is also applied 
+in the light lepton channels. As described in Section 3, the trigger turn-on curves in data and MC are divided, resulting in bins of data/MC vs $p_{T}$. These points are 
+fit to a flat line to extract a global SF to correct the emulation of the trigger efficiency in MC. This fit has an uncertainty (stats) of $\sim 3-4$\%. However, to be conservative we 
+assign a 5\% systematic uncertainty per electron/muon leg, where 5\% is the maximal deviation between a data/MC point and the flat fit line. 
+
+  \item \textbf{$b$-Tagging Efficiency:} We consider a 30\% uncertainty on the mis-tag rate as measured by the 
+b-tagging POG \cite{CMS_PAS_BTV_11-001}. For the case of our signal, the systematic 
+uncertainty on the requirement of 0 jets mis-tagged as b-jets is determined by propagating the 30\% uncertainty on the 
+mis-tag rate through the following equation (which represents the signal efficiency for requiring 0 
+jets mis-tagged as b-Jets):
+
+\begin{equation}\label{eq:nttbar}
+  \epsilon^{\textrm{NBtag} < 1} = 1 - \sum_{n=1} P(n) \cdot \sum_{m=1}^{n} C(n,m) \cdot f^{m} \cdot (1-f)^{n-m}
+\end{equation}
+
+where $P(n)$ is the probability to obtain $n$ additional jets (non-tau and non-lepton) in the event, $C(n,m)$ the 
+combinatorial of $n$ $choose$ $m$, and $f$ the mis-tag rate. The probability to 
+obtain at least one additional jet in the event is $\sim$ 10\%. Therefore, based on the above equation, the 
+mis-tag rate and uncertainty, and the probability to obtain at least one additional jet we calculate a 
+systematic effect of $\sim 5$\% on our signal due to the mis-tag rate. The b-tagging/mis-tagging systematics are considered 100\% correlated across MC based 
+backgrounds with similar composition (e.g. W + jets and DY + jets where there are typically no real b-jets), but completely uncorrelated to backgrounds that have 
+different composition (e.g. $t\bar{t}$ vs. DY + jets).
+
+  \item \textbf{Electron Energy Scale:} We consider the effect on the signal acceptance efficiency of a 1\% (2.5\%) shift on the electron
+  energy scale in the barrel (endcap) region. The resultant systematic uncertainty on signal and MC based backgrounds is $< 1$\%.
+
+  \item \textbf{Electron Identification + Trigger:} We consider a 6\% uncertainty on the combination of electron reconstruction, identification and the single 
+electron trigger as measured with a data-driven method \cite{electron8TeV, ZpCMSmumuee13}.
+
+  \item \textbf{Muon Momentum Scale:} We consider the effect on the signal acceptance efficiency of a 1\% momentum scale uncertainty on the
+  muon momentum. The resultant systematic uncertainty on signal and MC based backgrounds is $< 1$\%.
+
+  \item \textbf{Muon Identification + Trigger:} We consider a 7\% uncertainty on the combination of muon reconstruction, identification and the single muon 
+trigger as measured with a data-driven method \cite{muon13TeV, ZpCMSmumuee13}.
+
+  \item \textbf{Tau Energy Scale:} We consider the effect of the 3\% tau energy scale uncertainty measured by the tau 
+POG on the signal acceptance. The tau 4-momentum is scaled by a factor of $k=1.03$ ($p_{smeared} = k \cdot 
+p_{default}$) and variables are recalculated using $p_{smeared}$. We find that by using $p_{smeared}$ calculated with 
+a factor of $k=\pm 1.03$, the signal and MC baded backgrounds fluctuates by up to $\sim 11$\%. 
+
+ \item \textbf{Tau Identification:} We consider a 5\% uncertainty per $\tau_{h}$ on the $\tau_{h}$ identification.
+A dominant systematic uncertainty is related to the confidence that the MC simulation correctly models the identification 
+efficiency for high-\pt $\tau_{h}$ candidates. This additional uncertainty per $\tau_{h}$ amounts to 35\% $\cdot$ \pt / 1 \TeV, 
+resulting in $<$ 4\% (10\%) uncertainty for a reconstructed mass of 500 GeV in the $\tau_{\ell} \tau_{h}$ ($\tau_{h}\tau_{h}$) 
+channel and $<$ 12\% (25\%) at 2 TeV. Technically the systematic uncertainty on high-$p_{T}$ $\tau_{h}$ identification is determined by 
+applying the $p_{T}$ dependent weights, per leg, and extracting varied mass templates which are used as input in the fitter as 
+shape systematics. 
+
+  \item \textbf{Jet Energy Scale:} We consider the effect of a 3-5\% jet energy scale uncertainty on the signal 
+acceptance (depending on the $\eta$ and $p_{T}$ of the considered jet as prescribed by the $JetMET$ $POG$). For example, for a 5\% JES uncertainty, the jet 
+4-momentum is scaled by a factor of $k=1.05$ or $0.95$ ($p_{smeared} = k \cdot p_{default}$) and variables are recalculated 
+using $p_{smeared}$. We find that by using $p_{smeared}$ calculated with
+a factor of $k=\pm 1.05$ or $0.95$, the signal and MC baded backgrounds fluctuates by up to $\sim 12$\%. 
+  \item \textbf{MET:} The uncertainty on MET for our signal process is driven by the tau energy scale (TES), jet energy 
+scale (non-tau jets) (JES), light lepton energy/momentum scale (LES), and unclustered energy (UCE). We follow the official recommendation. 
+The systematic effect from MET due to TES, JES and LES is included in the JES, 
+TES, LES systematic uncertainties described above. We find that a 10\% uncertainty on the unclustered energy results 
+in at most a 0.5\% fluctuation on the signal acceptance and MC-based BG predictions.
+%
+%  \item \textbf{MET:} The uncertainty on MET for our signal process is driven by the jet energy 
+%scale (non-tau jets) (JES), light lepton energy/momentum scale (LES), and unclustered energy (UCE).
+%The systematic effect from MET due to TES, JES and LES is included in the JES,
+%TES, LES systematic uncertainties described above. We find that a 10\% uncertainty on the unclustered energy results
+%in at most a 0.5\% fluctuation on the signal acceptance.
+
+  \item \textbf{PDF Systematics Uncertainty:} We consider the effect of the PDF uncertainties on the signal acceptance 
+by using the mass binned DY samples to mock up Z' samples in the following way:
+\begin{table}[ht]	
+  \begin{tabular}{| l | c | c | c | c | c | c |} 
+  \hline\hline 
+  Z' mass point (GeV) & 500 & 1000 & 1500 & 2000 & 2500 & 3000\\
+  \hline
+  DY mass slice & 500to550 & 1000to1050 & 1500to1550 & 2000to2050 & 2450to2550 & 2800to3000\\
+  \hline \hline
+  \end{tabular}
+\end{table}
+
+Following the "PDF4LHC recommendations for LHC Run
+II"~\cite{PDF4LHC15}, the PDF uncertainties are computed from the
+68$\%$ confidence level with the PDF4LHC15$\_$mc sets. The PDF 
+uncertainties for our main backgrounds, \ttbar, W+Jets and DY, are
+much smaller than their bin-by-bin statistical uncertainties thus is
+neglected. The PDF uncertainties on the signal acceptance range from
+0.7$\%$ for Z' at 500 GeV up to 12$\%$ for Z' at 3 TeV.
+
+  \item \textbf{Pileup:} We have followed the recommendation for pileup corrections and used a 69.2 mb minbias cross-section. We have considered two approaches to 
+determine systematic uncertainty due to pileup. The first method, which is the official recommendation, is to vary the minbias cross-section by 5\% and re-derive pileup 
+weights. Using the new weights with $\pm$5\% in the minbias cross-section results in at most a 2\% change in the signal and MC-based BG yields over the full mass range. 
+As a more conservative approach, we take the difference in yields and shapes between ``with pileup weights'' and ``without pileup weights''. This amounts to at most 5\% 
+uncertainty in signal or backgrounds. 
+%However, we find that 71 mb provides a
+%better modeling of the number of privary vertices observed in data (Figure~\ref{fig:69vs71mb}). While this distinction is not particularly important for the
+%backgrounds, since they are determined from data, we assign a systematic uncertainty on signal due to pileup. The uncertainty is determined as the difference in
+%signal yields between the 69 mb and 71 mb scenarios. For all signal masses, the uncertainty is 1\%.
+
+  \item \textbf{Background Estimates:} The uncertainty on the data-driven background estimations are driven by the statistics in data in the various control
+samples. 
+%There is also a mostly negligible contribution from the level of contamination
+%from other BGs in the control regions. 
+In cases where MC based BGs must be subtracted off, the uncertanties in the MC bgs due to the above listed
+systematic uncertanties are propagated throughout the subtraction and used to assign a systematic uncertainty on the background prediction. 
+Table~\ref{table:SystematicsTable} summarizes the systematic uncertainties considered. The ``Closure+Norm'' row represents the uncertainty in 
+the BG prediction due to the extracted data-to-MC SFs in control regions or the transfer factors used to derive full data-driven estimates. 
+In summary, the systematic uncertainties range from 2-20\%, depending on the background. For example, the DY$\to\tau\tau$ control regions 
+result in data-to-MC scale factors consistent with 1, but with uncertainties between 3\% and 5\%, depending on the channel. The $t\bar{t}$ scale 
+factors range from 1\% in the $e\mu$ channel to 6\% in the $e\tau_{h}$ channel. A conservative estimate of the uncertainty on the diboson background 
+is derived from a $e\mu$ control sample which results in a scale factor of $1.01 \pm 0.20$, and thus a 20\% uncertainty on diboson is assigned in all 
+channels. The systematic uncertainty on the QCD prediction in the $\tau_{h}\tau_{h}$ channel is dominated by the measured OS-to-SS transfer factor 
+of $1.32 \pm 0.12$ (9\% relative uncertainty). In the $\ell\tau_{h}$ channels, the uncertainty on the QCD prediction is dominated by the uncertainty 
+on the ``Tight-to-Loose'' ratio $f_{LT}^{QCD}$, with an uncertainty of 
+11\% in the $\mu\tau_{h}$ channel, 8\% in the $e\tau_{h}$ channel, and 
+23\% in the $e\mu$ channel. The uncertainty on the W + jets estimate is dominated by the uncertainty on the measurement of the ``jet-to-$\tau_{h}$'' fake 
+rate used to extrapolate to the signal region. This results in an 
+uncertainty of 8\% in the $\mu\tau_{h}$ channel, 15\% in the $e\tau_{h}$ 
+channel, and 33\% in the $e\mu$ channel. 
+
+\end{itemize}
+
+\newcommand{\ch}{\tiny $hh$, $\mu h$, $eh$, $e\mu$}
+\newcommand{\chs}{\footnotesize \thth, \tmth, \teth, \tetm}
+
+\begin{table}[ht]\centering
+ \caption{Summary of systematic uncertainties. Values are given in
+   percent.  ``s'' indicates template variations (``shape''
+   uncertainties). $\rm L=2.5\%$.}
+ \resizebox{\textwidth}{!}{
+ \begin{tabular}{|l|c|c|c|c|c|c|} \hline \hline
+   Source                  & QCD         & W           & DY          & \ttbar      & VV          & Signal      \\
+   \chs:                   & \ch         & \ch         & \ch         & \ch         & \ch         & \ch         \\
+   \hline Lumi             & --,--,--,-- & L,--,--,L   & L,L,L,L     & L,L,L,L     & L,L,L,L     & L,L,L,L     \\
+   \hline $\mu$ ID + Trig  & --,--,--,-- & --,--,--,7  & --,7,--,7   & --,7,--,7   & --,7,--,7   & --,7,--,7   \\
+   \hline e ID + Trig      & --,--,--,-- & --,--,--,6  & --,--,6,6   & --,--,6,6   & --,--,6,6   & --,--,6,6   \\
+   \hline $\tau_{h}$ Trig  & --,--,--,-- & 10,--,--,-- & 10,--,--,-- & 10,--,--,-- & 10,--,--,-- & 10,--,--,-- \\
+   \hline $\tau_{h}$ ID    & --,--,--,-- & 10,--,--,-- & 10,6,6,--   & 10,6,6,--   & 10,6,6,--   & 10,6,6,--   \\
+\hline high-$p_{T}$ $\tau_{h}$ ID    & --,--,--,-- & $<5$,--,--,-- & $<10$,$<5$,$<5$,--   & $<10$,$<5$,$<5$,--   & $<10$,$<5$,$<5$,--   & $<30$,$<15$,$<15$,--   \\
+   \hline b ID             & --,--,--,s  & 10,--,--,s  & 5,5,s,s     & 10,12,s,s   & 5,5,s,s     & 5,5,s,s     \\
+   %% \hline JES           & --,--,--,s  & 12,--,--,s  & 8,9,s,s     & 12,10,s,s   & 8,9,s,s     & 2,2,s,s     \\
+   \hline JES              & --,--,--,s  & 12,--,--,s  & 8,s,s,s     & 12,s,s,s    & 8,s,s,s     & 2,2,s,s     \\
+   %% \hline TES           & --,--,--,s  & 11,--,--,s  & 11,7,s,s    & 11,9,s,s    & 8,8,s,s     & 3,3,s,s     \\
+   \hline TES              & --,--,--,s  & 11,--,--,s  & 11,s,s,s    & 11,s,s,s    & 8,s,s,s     & 3,3,s,s     \\
+   \hline MMS              & --,--,--,-- & --,--,--,1  & --,1,--,1   & --,1,--,1   & --,1,--,1   & --,1,--,1   \\
+   \hline EES              & --,--,--,-- & --,--,--,1  & --,--,1,1   & --,--,1,1   & --,--,1,1   & --,--,1,1   \\
+   \hline top~\pt          & --,--,--,-- & --,--,--,-- & --,--,--,-- & --,--,--,s  & --,--,--,-- & --,--,--,-- \\
+   \hline pdf              & --,--,--,-- & --,--,--,-- & --,--,--,-- & --,--,--,-- & --,--,--,-- & (1--12)     \\
+   \hline bin-by-bin stat. & s,s,s,s     & s,s,s,s     & s,s,s,s     & s,s,s,s     & s,s,s,s     & s,s,s,s     \\
+   \hline Closure+Norm.    & 9,11,8,23 & --,8,15,33    & 8,3,5,5  & --,4,6,1     & 20,20,20,20 &             \\
+%   \hline W+Jets MC Norm.  & --,--,--,-- & --,--,7,--  & --,--,--,-- & --,--,--,-- & --,--,--,-- & --,--,--,-- \\
+   \hline \hline
+ \end{tabular}
+ \label{table:SystematicsTable}
+}
+\end{table}
+
+

@@ -1,0 +1,269 @@
+\section{The ditauhad Channel}\label{sec:dihad}
+
+A search for new heavy gauge bosons is presented using events with two hadronically decaying $\tau$ leptons. Because of the resemblance of QCD jets with $\tau_{h}$, the probability of misidentifying a QCD jet as a $\tau_{h}$ is at least an order of magnitude higher than that for a QCD jet to be misidentified as an electron or a muon. As a result, the final state is highly contaminated by QCD multijet background ($> 90\%$ of the background in the signal region). But, typical signal events are expected to appear at fairly high invariant mass values, where the QCD multi-jet contribution is strongly reduced owing to its rapidly falling production cross-section versus $\sqrt{s}$. Thus QCD multijet background only moderately affects the sensitivity of the analysis. Apart from QCD multijets, the other prevailing background is Drell-Yan processes giving rise to $\tau$ leptons. The large branching ratio of $\tau\tau \to \tau_{h}\tau_{h}$ (about 42\%) makes its contribution to the sensitivity of the overall analysis highly important. 
+
+
+Similarly to other channels, the selections---designed to discriminate between the signal and background---are divided into: kinematic and geometric acceptance for selecting $\tau_{h}\tau_{h}$ pairs, $\tau_{h}$ identification, and topological selections. The main difference with the analyses of the $e\mu$, $\mu \tau_h$ and $e \tau_h$ channels are the substantially tighter $p_{T}(\tau_{h})$ requirements in order to stay efficient with respect to the trigger and targeting at the suppression of QCD multijet backgrounds (the exact selections are described below). Note that surviving pairs of $\tau_{h}$ candidates are preserved at each intermediate stage in the selections. In events in which more than one pair of unique $\tau_{h}$ candidates passes all the selections, only the pair with the most isolated taus is selected.
+
+%only that pair with the highest $m(\tau_{h},\tau_{h},\MET)$ is selected. This requirement has a very high efficiency for both signal and backgrounds (the fraction of events with more than one pair is $\ll 1$\%).
+
+Events fired by the $HLT\_DoubleMediumIsoPFTau35\_Trk1\_eta2p1\_Reg*$ trigger for Run BCDEFG and $HLT\_DoubleMediumCombinedIsoPFTau35\_Trk1\_eta2p1\_Reg*$ for Run H are considered as the interesting events for offline analysis. Events are required to have 1 or 3 prong taus with $p_{T}$ greater than 70\gev . These taus are required to have pseudorapadity coverage of $|\eta| < 2.1$. A $\tau_{h}$ candidate is also required to satisfy the reconstruction and identification criteria described in section~\ref{sec:recoID}. The $\tau_{h}$ candidates are required to pass the following discriminators: ''DecayModeFindingNewDMs'', ''byTightIsolationMVArun2v1DBnewDMwLT'', ''againstMuonTight3''  and ''againstElectronMVALooseMVA6''. These discriminators ensure the proper identification of a $\tau_{h}$ against QCD jets, muons and electrons. The candidate $\tau_{h}\tau_{h}$ pairs are required to be separated in $\eta-\phi$ space by $\Delta R(\tau_{h},\tau_{h}) > 0.3 $. Further, to reduce top pair contamination the event is required not to have any jet identified as a b-quark jet by the b-tagging algorithms using the ``combined secondary vertex loose'' (pfCISVV2) working point. For consistency with the other channels, only 1- and 3-prong taus are considered. These preselection cuts are summarized in the Table~\ref{table:preselection}. Further, each event must have at least 30 \gev of missing transverse energy to account for the neutrinos present in signal and further discriminate against the QCD multijet background.  The $\tau_{h}\tau_{h}$ pair is expected to be back-to-back with $\cos(\delta\phi(\tau_{h},\tau_{h})) < -0.95$ and $\cos(\delta(tau_{h}^{lead},MET))<-0.9$. 
+
+
+\begin{table}[!htpb]
+  \caption{Pre-selection criteria for the $\tau_{h}\tau_{h}$ channel.}
+  \centering{
+    \begin{tabular}{ll} \hline \hline
+      & Selections \\ \hline \hline
+      p$_{T}$                &  $>$  70 GeV \\
+      $|\eta|$               &  $<$ 2.1 \\
+      TauDecay               & \textit{1or3hps} \\
+      $\tau (Iso)$           & \textit{byTightIsolationMVArun2v1DBnewDMwLT} \\
+      Anti-electron          & \textit{againstElectronMVALooseMVA6} \\
+      Anti-muon              & \textit{againstMuonTight3} \\
+      N$_{\tau}$             & $\geq$ 2 \\
+      Bjet veto              & \textit{bDiscriminator\_pfCISVV2}\\
+      $\Delta R(\tau_{1},\tau_{2})$             & $>$ 0.3 \\
+      $Ch_{\tau_{1}} \times CH_{\tau_{2}}$      & $<$ 0 \\
+      \hline \hline
+    \end{tabular}
+
+  }
+  \label{table:preselection}
+\end{table}
+
+ %The efficiency of these dicriminators is shown in section~\ref{sec:tauIDeff}. 
+
+Figure \ref{fig:n-1_tautau_QCDMC} shows some N-1 plots for the $\tau_{h}\tau_{h}$ signal region. Note that the QCD MC has limited statistics which motivates
+a data-driven estimation of this background. Figure \ref{fig:n-1_tautau_QCDdatadriven} shows the N-1 validation plots using all signal region requirements, where 
+QCD was estimated in a data-driven way (see next section). In addition, in order
+to motivate the selection criterion used for the  $\cos(\Delta\phi(tau_{h}^{lead}, E^{miss}_{T})) < -0.9 $, Figure \ref{fig:n-1_tautau_cosDphiTauMET_normalizedtounity}
+shows the distribution of signal and backgrounds normalized to unity, in linear and log scale. Note that over 85$\%$ of the signal falls below $-0.9$ while the QCD
+background, which is the dominant SM contribution, is on average evenly spread.
+
+
+\begin{figure}[tbhp!]
+      \centering
+      \begin{tabular}{cc}
+        \includegraphics[width=0.33\textwidth, height=0.25\textheight]{figures/n_1/tautau/Nminus1_noMET_MET.pdf} 
+        \includegraphics[width=0.33\textwidth, height=0.25\textheight]{figures/n_1/tautau/Nminus1_noCosDphi_cosDphi.pdf} 
+        \includegraphics[width=0.33\textwidth, height=0.25\textheight]{figures/n_1/tautau/Nminus1_noCosDphiPtMET_cosdphiPtMET.pdf}
+      \end{tabular}
+      \caption{Distributions of the variables used for $\tau_{h}\tau_{h}$ signal selection, after all other signal 
+        selection requirements on variables other than the one plotted. \ETslash (left), $\cos{\Delta \phi (\tauh,\tauh)}$ (middle) and $\cos{\Delta \phi (\tauh,\MET)}$ (right).}
+    \label{fig:n-1_tautau_QCDMC}
+\end{figure}
+
+\begin{figure}[tbhp!]
+      \centering
+      \begin{tabular}{cc}                                                               
+        \includegraphics[width=0.33\textwidth, height=0.25\textheight]{figures/n_1/tautau/Nminus1_noMET_MET_datadriven.pdf} 
+        \includegraphics[width=0.33\textwidth, height=0.25\textheight]{figures/n_1/tautau/Nminus1_noCosDphi_cosDphi_datadriven.pdf} 
+        \includegraphics[width=0.33\textwidth, height=0.25\textheight]{figures/n_1/tautau/Nminus1_cosDphiTauMET_datadriven.pdf}
+      \end{tabular}
+      \caption{Distribution of variables after all requirements for the signal region with exception of one plotted. QCD background has been estimated with a data-driven method.}
+    \label{fig:n-1_tautau_QCDdatadriven}
+ \end{figure}
+
+\begin{figure}[tbhp!]
+      \centering
+      \begin{tabular}{cc}                                      
+        \includegraphics[width=0.45\textwidth, height=0.25\textheight]{figures/selections/tautau/CosDeltaPhi_TauMET_AU.pdf} 
+        \includegraphics[width=0.45\textwidth, height=0.25\textheight]{figures/selections/tautau/CosDeltaPhi_TauMET_AU_fill_log.pdf} 
+      \end{tabular}
+      \caption{$\cos(\Delta\phi(\tau_{h}^{lead}, E^{miss}_{T}))$ distribution normalized to unity after all requirements for the signal region with exception of one plotted. QCD has been estimated with the data-driven method described in the next section.}
+    \label{fig:n-1_tautau_cosDphiTauMET_normalizedtounity}
+ \end{figure}
+
+%These are topological cuts which reduce the contamination of backgrounds mainly from  $t\bar{t}$, W+jets and QCD processes to negligible levels. 
+
+%\begin{figure}[tbhp!]
+%      \centering
+%      \begin{tabular}{cc}
+%        \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/tautau/cosDphiTau1andMET0.png}
+%      \end{tabular}
+%     \caption{$\cos(\delta(tau_{h}^{lead},MET))$ distribution in order to reduce the background contribution from $t\bar{t}$, W+jets and QCD processes.}
+%    \label{fig:cosdphi}
+% \end{figure}
+
+ %The efficiency of these dicriminators is shown in section~\ref{sec:tauIDeff}. 
+
+
+
+\subsection{QCD Background Estimation}
+
+The main background for $\tau_{h}\tau_{h}$ final state is QCD multijet events ($>90\%$) and evaluated by a data-driven approach as a MC program does not model the background properly, nor does it provide sufficient statistics to make any strong conclusions. %They are due to Z/W boosted recoil corrections which are applied in order to correct for the mismodeling of MET in the DY and W+Jets samples. Right? The weights depend on the Z/W bosons pt at generator level.
+
+%As already discussed, QCD is the main background of this final state. For its estimation, we rely on data-driven approach as MC statistics in not sufficient to model it properly.
+The number of events in the signal region is given by the following equation: 
+
+\begin{equation}                                                                                                                                                      
+N_{\textrm{Signal}}^{\textrm{QCD}} = N_{\textrm{LS}}^{\textrm{QCD}} \cdot R_{OS/LS},
+\end{equation}
+   
+Here $N_{\textrm{LS}}^{\textrm{QCD}}$ and $R_{OS/LS}$ are evaluated using the following approach. For its estimation, we rely on the classical method of counting events selected in a similar way as the signal events but selecting $\tau_{h}\tau_{h}$ pairs with like-sign electrical charge. This leads to events heavily dominated by the QCD multi-jet background. Assuming that QCD dijets are charge-blind, the number of like-sign events $N_{LS}$ should be equal to the number of opposite-sign $N_{OS}$ QCD multi-jet events after correcting $N_{LS}$ measured in data for known contamination from electroweak backgrounds using simulation. However, the assumption of the charge symmetry in events with two jets is not always true. An asymmetry in the charges of jets in multi-jet events can arise from the remaining correlation between the quark charge and the leading track charge of the jet in events where quark charges are correlated. 
+%e.g. $gg \to q \bar{q}$, $W \to q \bar{q}^{\prime}$. 
+Note that the correlation between the charge of the quark and the charge of the track becomes stronger in jets, in which the entire jet fluctuates into just a few high momentum tracks. Calculation of QCD $N_{LS}$ and $N_{OS}$ terms are made in control regions of the lower $\MET$ sidebands for the calculation of the asymmetry factor $R_{OS/LS}$ (shown in the next section). The contamination from signal in the LS control regions are small since the charge mis-measurement is small ($\sim 1-5\%$) for $m(Z^{\prime}) < 2.5$ TeV. 
+
+The QCD estimation and validation strategy used in this analysis is shown in Figure~\ref{fig:qcd} .    
+
+
+ \begin{figure}[tbh!]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=0.75\textwidth]{figures/backgroundEstimation/tautau/QCD_Strategy.jpg}
+     \end{tabular}
+     \caption{QCD estimation and validation strategy for the $\tau_{h}\tau_{h}$ channel.}
+    \label{fig:qcd}
+   \end{figure}
+
+The shape of the $m(\tau_{h},\tau_{h},\MET)$ distribution is obtained from control region C (same-sign $\tau_{h}\tau_{h}$ with nominal $\MET$). To extract the OS/LS ratio from data, two control regions 1B and 1D are obtained by keeping the same selections as signal selections but inverting the $\MET$ cut $(\MET < 30$ GeV) and requiring OS and LS $\tau_{h}\tau_{h}$ pairs respectively. The contribution of non-QCD MC backgrounds are subtracted from data in these control regions and then the $R_{OS/LS}$ is measured:
+
+\begin{equation}
+  \begin{aligned}
+    N^{\textrm{QCD}}_{\textrm{OS}} &= N^{\textrm{Data}}_{\textrm{OS}} - N^{\textrm{non-QCD MC}}_{\textrm{OS}} \\
+    N^{\textrm{QCD}}_{\textrm{LS}} &= N^{\textrm{Data}}_{\textrm{LS}} - N^{\textrm{non-QCD MC}}_{\textrm{LS}} \\
+    % R_{\textrm{OS/LS}} = QCD_{\textrm{OS}}/QCD_{\textrm{LS}} \\
+    R_{\textrm{OS/LS}} &= N^{\textrm{QCD}}_{\textrm{OS}}/N^{\textrm{QCD}}_{\textrm{LS}} \\
+\end{aligned}\label{eqn:OSLSratio}
+\end{equation}
+
+Table~\ref{table:OLSStable} shows the data and MC yields in controls regions 1B and 1D. The purity of QCD multijet, defined by Data - $\sum\limits_{i} BG_{i}$, is approximately $96-99$\% depending on the sample. The measured OS/LS ratio is $1.34\pm0.12$. The above equation shows the mathematical procedure used to obtain this ratio. 
+
+Closure and validation tests for the background estimation method outlined above is performed with real data, since there are insufficient statistics to perform such a test with simulation. Two aspects are simultaneously tested: (1) closure on the normalization (i.e. $N_{\textrm{QCD}}^{A} = N_{\textrm{QCD}}^{C} \cdot \frac{N_{\textrm{QCD}}^{B}}{N_{\textrm{QCD}}^{D}}$); (2) correct determination of the $m(\tau_{h},\tau_{h},\MET)$ shape. In order to check (with data) whether same-sign $\tau_{h}\tau_{h}$ events can correctly model the mass shapes in the opposite-sign regions, we perform a shape closure/validation test by taking the shape from region 1D (obtained as Data - $\sum\limits_{i} BG_{i}$) and normalize it to the QCD yield in control region 1B. By comparing the shape for the QCD prediction in region 1B with the observed mass spectrum in the same region, we can determine whether same-sign $\tau_{h}\tau_{h}$ correctly models the mass shapes in the opposite-sign region. Furthermore, any disagreement in the shape between data and the QCD prediction can be used to assign systematic uncertainty on the shape. Figure~\ref{fig:MG304} shows the $m(\tau_{h},\tau_{h},\MET)$ mass distribution for this closure test in control region 1B. We observe very good agreement between the observed shape and the predicted shape and thus no additional systematic uncertainties are applied due to this particular closure test on the shape. 
+
+\begin{table}[!htpb]
+   \caption{ Yields in the controls region 1(B) and 1(D) used for calculation of OS/LS ratio.}
+   \centering{
+     \begin{tabular}{ | l | c | c | }
+        \hline \hline
+        Process & OS $\tau_{h}\tau_{h}$ isolated + MET $<$ 30 GeV  & SS $\tau_{h}\tau_{h}$ isolated + MET $<$ 30 GeV \\ \hline
+        Data                            &  405.0            &   261.0             \\ \hline
+        W + jets                        &   10.2 $\pm$  6.0 &     1.3 $\pm$  0.9  \\ \hline
+        Z + jets                        &   46.9 $\pm$  6.8 &     0.1 $\pm$  0.1  \\ \hline
+        DiBoson                         &    0.5 $\pm$  0.4 &     0.0 $\pm$  0.0  \\ \hline
+        $t\bar{t}$                      &    0.6 $\pm$  0.4 &     0.3 $\pm$  0.3  \\ \hline
+%        Higgs $\to \tau\tau$            &    0.1 $\pm$  0.1 &     0.1 $\pm$  0.1  \\ \hline
+        Data - $\sum\limits_{i} BG_{i}$ &  346.7 $\pm$ 22.1 &   259.2 $\pm$ 16.2  \\ \hline \hline
+        Total BG                        &  404.4 $\pm$ 38.8 &   261.0 $\pm$ 16.2  \\ \hline \hline
+        OS/LS ratio       & 1.34 $\pm$ 0.12     & \\ \hline \hline
+     \end{tabular}
+   }
+   \label{table:OLSStable} % is used to refer this table in the text
+ \end{table}
+
+\begin{figure}[tbhp!]
+      \centering
+      \begin{tabular}{cc}
+        
+        \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/tautau/mass_B.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/tautau/mass_B_log.pdf}
+      \end{tabular}
+      \caption{$m(\tau_{h},\tau_{h},\MET)$ distribution in isolated OS tau-pairs with low $E^{miss}_{T}$ (Left: normal scale. Right:
+log scale). QCD background was estimated from SS events in the low-$E^{miss}_{T}$ sideband, normalized to 
+Data - $\sum\limits_{i} BG_{i}$ in control region B (isolated OS, low-$E^{miss}_{T}$ sideband).}
+    \label{fig:MG304}
+ \end{figure}
+
+Table~\ref{table:CR3table} represents the event rate of data and backgrounds in regions 1A (signal region) and 1C (same-sign, isolated $\tau_{h}\tau_{h}$ with nominal $\MET$). QCD 
+shapes/rates are extracted in data-driven way from control region 1C and scaled by the OS/LS ratio determined from control region 1B and 1D. The non-QCD 
+backgrounds are taken directly from MC in Table~\ref{table:CR3table} (see the next section for a validation of the DY + jets background yield). Other processes such as W + jets, 
+$t\bar{t}$ and diboson represent only $\sim 1$\% of the total background rate in the signal region, and are thus taken directly from MC. Recoil corrections are considered for the DY + jets and W + jets MC samples in order to account the mismodeling of \MET. The final prediction of QCD events in the signal region 1A is given in the right-most column of Table~\ref{tab:QCDBGEstimationTable}. The procedure outlined in this section yields a QCD estimate of 
+$N_{\textrm{QCD}}^{\textrm{Signal}} = 382.9 \pm 45.1 $. The uncertanty is based on the statistics of the data and MC samples. We stress that this is the QCD predicted rate over the entire $m(\tau_{h},\tau_{h},\MET)$ spectrum. As was mentioned in the strategy section of this note, we fit for a potential signal that would appear as an excess of events over the standard model expectation in the high $m(\tau_{h},\tau_{h},\MET)$ part of the distribution, as can be seen in Figure \ref{fig:BkgEstimation_SR}. Figure \ref{fig:SignalRegionPlot_a} shows the distributions of $m(\tau_{h},\tau_{h},\MET)$ in the signal region.
+
+\begin{figure}[tbhp!]
+      \centering
+      \begin{tabular}{cc}
+        
+        \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/tautau/SR.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/tautau/SR_log.pdf}
+      \end{tabular}
+      \caption{$m(\tau_{h},\tau_{h},\MET)$ distribution in signal region (Left: normal scale. Right: log scale). QCD 
+        background was estimated from SS events in the nominal-$E^{miss}_{T}$ sideband, normalized with the OS/LS ratio.}
+    \label{fig:BkgEstimation_SR}
+ \end{figure}
+
+ 
+%The total predicted background $m(\tau_{h},\tau_{h},\MET)$ spectrum will be shown in the results section. 
+
+
+\begin{table}[!htpb]
+  \caption{Background and data yields in QCD control regions $A$ and $C$ under nominal isolation and $\MET$ conditions (i.e. isolated $+$ $\MET > 30$ GeV).}
+   \centering{
+     \begin{tabular}{ | l | c | c | }
+        \hline \hline
+
+        Process & OS $\tau_{h}\tau_{h}$ isolated + MET $>$ 30 GeV  & SS $\tau_{h}\tau_{h}$ isolated + MET $>$ 30 GeV \\ \hline
+
+        Data                            &  606.0            &   314.0             \\ \hline
+        W + jets                        &   39.7 $\pm$  4.9 &    11.0 $\pm$  2.6  \\ \hline
+        Z + jets                        &  131.7 $\pm$  8.6 &    14.8 $\pm$  4.7  \\ \hline
+        DiBoson                         &    3.5 $\pm$  1.1 &     0.8 $\pm$  0.5  \\ \hline
+        $t\bar{t}$                      &    4.4 $\pm$  1.2 &     1.0 $\pm$  0.6  \\ \hline
+%        Higgs $\to \tau\tau$            &    0.2 $\pm$  0.1 &     0.1 $\pm$  0.0  \\ \hline
+        QCD Estimation                  &  382.9 $\pm$ 45.1 &   286.3 $\pm$ 18.5  \\ \hline \hline
+        Total BG                        &  562.3 $\pm$ 46.2 &   314.0 $\pm$ 19.3  \\ \hline \hline
+     \end{tabular}
+   }
+  \label{table:CR3table}
+ \end{table}
+
+
+%\begin{figure}[tbhp!]
+%      \centering
+%      \begin{tabular}{cc}
+%        \includegraphics[width=0.6\textwidth,page=1]{figures/backgroundEstimation/tautau/SR_unblinded_log.pdf}
+%      \end{tabular}
+%      \caption{$m(\tau_{h},\tau_{h},\MET)$ distribution in signal region. QCD background was estimated with a data-driven method. Systematic uncertainies are included.}
+%    \label{fig:SR_unblinded}
+% \end{figure}
+
+
+\begin{table}[ht]
+  \centering{
+  \scalebox{0.7}{
+
+\begin{tabular}{ | l | c | c | c | c | }
+\hline \hline
+Region & OS $\tau_{h}\tau_{h}$ + MET $<$ 30 GeV  & SS $\tau_{h}\tau_{h}$ + MET $<$ 30 GeV  & SS $\tau_{h}\tau_{h}$ + MET $>$ 30 GeV  & OS $\tau_{h}\tau_{h}$ + MET $>$ 30 GeV \\ \hline
+QCD         & 346.7 $\pm$ 37.7 & 259.2 $\pm$ 16.2 & 286.3 $\pm$ 18.5  &  382.9 $\pm$ 45.1  \\ \hline \hline
+Total BG    & 404.5 $\pm$ 38.8 & 261.0 $\pm$ 16.2 & 314.0 $\pm$ 19.3  &  562.3 $\pm$ 46.2  \\ \hline \hline
+\end{tabular}
+  }
+  }
+  \caption{QCD yields in regions $A$ (signal region), $B$, $C$, and $D$.}
+  \label{tab:QCDBGEstimationTable}
+\end{table}
+
+
+%CRB y CRD
+ %       Data - $\sum\limits_{i} BG_{i}$ & 1103.7 $\pm$ 43.24 & 829.3 $\pm$ 35.57  \\ \hline \hline
+
+
+
+%CRC CRA
+%        Data - $\sum\limits_{i} BG_{i}$ & 752.8 $\pm$ 50.33 & 655.8 $\pm$ 27.34  \\ \hline \hline
+
+
+\subsection{Background Estimation for Z($\tau_h\tau_h$) + jets}
+
+We do not employ a complete data-driven measurement of the Z($\tau_h \tau_h$) + jets contribution to the signal region. Instead, we take an approach based on both simulation and data. The efficiency for the requirement of at least two high quality $\tau_h$'s is expected to be well modeled by simulation. Therefore, the estimate of the Z($\tau_h \tau_h$) + jets contribution is determined by obtaining a control sample used to validate the correct modeling of the requirement of at least two high quality $\tau_h$'s. Since the DY + jets background in this channel is only $<$ 10$\%$ of the total background in the signal region, the above approach is sufficient.\\
+
+As discussed above, the typical probability of misidentifying a QCD jet as a $\tau_h$ is at least an order of magnitude higher than that for a QCD jet to be misidentified as a light lepton. As a result the QCD multijet background in the $\tau_h\tau_h$ channel (the focus of this note) is substantially higher than in lepton plus tau or dilepton channels. One should note that the presence of large multijet background mainly complicates the definition of suitable control regions for validating the agreement between collision data and simulation for other backgrounds. For this purpose, the events are selected using the ``pre-selection'' cuts shown in the Table~\ref{table:preselection}, and additionally requiring $\tau_h\tau_h$ pairs with invariant mass less than 100 GeV in order to obtain a semi-clean sample of Z($\tau_h \tau_h$) events. One can see in the Figure~\ref{fig:DY} that the rate and shape between data and MC is consistent with the SM prediction. Only the statistical uncertainties have been included.
+
+ %The measured Z → ττ data-to-MC scale factor is SF preselection = 0.97 ± 0.19.
+
+\begin{figure}[tbhp!]
+      \centering
+      \begin{tabular}{cc}
+        \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/tautau/DY.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/tautau/DY_log.pdf}
+      \end{tabular}
+     \caption{m($\tau_h$,$\tau_h$) distribution for the  region obtained using the ``pre-selection'' cuts, and
+       additionally requiring $\tau_h \tau_h$ pairs with invariant mass less than 100 GeV. Linear scale (left), log scale (right)}
+    \label{fig:DY}
+ \end{figure}
+
+
+
+

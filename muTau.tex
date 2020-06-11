@@ -1,0 +1,381 @@
+\section{Muon + Hadronic Tau Channel}\label{sec:mTauhad}
+%\textbf{Responsible: E. Laird, Z. Mao, U. Heintz}
+
+\subsection{Event selection}\label{sec:mt_selection}
+
+Events must fire the single-muon trigger described in
+Section~\ref{sec:triggers}.  We select reconstructed muons
+satisfying:
+\begin{itemize}
+  \item $p_T>35~\gev$ and $\vert\eta\vert<2.1$
+  \item distance of closest approach to the leading 
+sum-$p_T^2$ primary vertex of less than 0.045~cm 
+(transvese) and 0.2~cm (longitudinal)
+  \item satisfy the muon POG medium muon requirement
+  \item having no matched conversion nor missing hits
+  \item within $\Delta R<0.5$ of the HLT muon that fired the trigger
+
+\end{itemize}
+
+Offline $\tauh$'s are required to have:
+\begin{itemize}
+  \item $p_{T}> 20~\gev$ and $\vert \eta \vert < 2.1$
+  \item distance of closest approach to the leading
+sum-$p_T^2$ primary vertex of less than 0.2~cm (longitudinal)
+  \item pass the new Decay Mode Finding requirement as 
+either a 1-prong or 3-prong $\tauh$
+  \item pass the ``againstElectronVLooseMVA6'' and
+``againstMuonTight3'' identification requirements
+\end{itemize}
+
+We build pairs of muons and $\tauh$'s in which the muon and
+$\tauh$ are separated by at least $\Delta R > 0.5$.  In events with
+more than one such pair, we select the pair with the two most isolated
+leptons, considering first the muon, and then the $\tauh$.  This
+criterion was seen to have good efficiency for signal samples.  In the
+rare case of multiple such pairs having identical isolation values,
+the reconstructed $p_T$'s are considred, preferring higher values.
+
+After a pair has been chosen for an event, we apply the following
+isolation requirements on the leptons, for an event to enter the
+signal region: muon relative isolation $<0.15$; \tauh isolation
+``byTightIsolationMVArun2v1DBnewDMwLT.''  In order to keep the
+different final states exclusive, an event is rejected if there is an
+additional muons satisfying the above identification requirements
+and with relative isolation $<0.3$, or a electron satisfying the
+identification requirements described in
+Section~\ref{sec:em_selection} with relative isolation $<0.3$.  To
+reduce further possible di-muon events in the $\tmth$ channel, an
+event is rejected if there is an opposite-charge muon pair with
+$\Delta R > 0.15$ in which both of the muon satisfy $p_T >
+15~\gev$, $\vert \eta \vert < 2.5$, has hits both in the tracker and muon chambers,
+and relative isolation $<0.3$. To further reduce backgrounds, we require 
+the muon and $\tauh$ to have opposite charge. The selection set 
+mentioned above is defined as preselection.
+
+\subsection{Signal region selections}\label{sec:signalRegionSelection}
+The topology of a massive $Z'\to\tau\tau$ decay 
+consists of two energetic back-to-back going $\tau$'s. As $\tau$'s 
+decay in the detector, undetectable neutrinos are produced leaving 
+imbalance in the total transverse momentum. Backgrounds without 
+such a topology are reduced by requiring $\ETslash>30 \gev$ and 
+$\cos{\Delta \phi (\mu,\tauh)}<-0.95$. To further reduce $t\bar{t}$ 
+backgrounds, events with one or more jets passing the CSV loose 
+b-tag requirements are rejected from the signal region.
+
+W+jets is one of the most dominant backgrounds in the \ltau channels, 
+where the lepton comes from a leptonically decaying W and a 
+random jet fakes the \tauh. The neutrino from the W decay is likely 
+to be back-to-back with respect to the lepton. With the 
+$\cos{\Delta \phi (\mu,\tauh)}<-0.95$ requirement, the \ETslash, 
+due to neutrinos from W decays, are most likely in the same 
+direction as \tauh. However, for $Z'\to\tau\tau$ decays, two 
+neutrinos are expected in the lepton direction while only one 
+neutrino is expected in the \tauh direction. Thus, the \ETslash 
+in $Z'\to\tau\tau$ decays is more likely to be aligned with the 
+reconstructed lepton. Figure~\ref{fig:selectionMotiviation_cosDPhi} 
+shows, with the $\ETslash>30 \gev$, $\cos{\Delta \phi (\mu,\tauh)}<-0.95$ 
+and 0 b-jet requirements, the separation in $\phi$ between the muon 
+and \ETslash in the left panel and \tauh and \ETslash in the right panel.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth,page=1]{figures/n_1/mt/cosDPhi_lep_met_mt}
+  \includegraphics[width=0.45\textwidth,page=2]{figures/n_1/mt/cosDPhi_lep_met_mt}
+  \caption{\label{fig:selectionMotiviation_cosDPhi} (Data driven QCD and MC based W+Jets with only statistical uncertainties) 
+Left: Distribution of $\cos{\Delta \phi (\mu,\ETslash)}$. Right: Distribution of 
+$\cos{\Delta \phi (\tauh,\ETslash)}$}
+\end{figure}
+
+As shown, most of the W+jets background can be rejected by 
+$\cos{\Delta \phi (\mu,\ETslash)} > 0.9$. However, there are roughly
+20\% of the signal events in the $\cos{\Delta \phi (\tauh,\ETslash)} > 0.9$ 
+category. Figure~\ref{fig:selectionMotiviation_mT} shows the 
+$m_{\text{T}}(\mu,\ETslash)$ distribution of events, whose \ETslash is 
+aligned with \tauh. By requiring $m_{\text{T}}(\mu,\ETslash) > 150~\gev$, 
+most of the W+jets background will be rejected while having little 
+to no effect on signal events. 
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth,page=1]{figures/selections/mT_mt}
+  \includegraphics[width=0.45\textwidth,page=2]{figures/selections/mT_mt}
+  \caption{\label{fig:selectionMotiviation_mT} With $\cos{\Delta \phi (\tauh,\ETslash)} > 0.9$ 
+selection. Left: (Data driven QCD and MC based W+Jets with only statistical uncertainties) 
+Distribution of $m_{\text{T}}(\mu,\ETslash)$ with Z'(3000). Right: 
+$m_{\text{T}}(\mu,\ETslash)$ of Z'(750), Z'(1750) and Z'(3000)}
+\end{figure}
+ 
+
+Hence, following the preselection, the signal region is defined as having:
+\begin{itemize}
+  \item $\cos{\Delta \phi (\mu,\tauh)}<-0.95$;
+  \item $\ETslash>30~\gev$;
+  \item $\cos{\Delta \phi (\mu,\ETslash)} > 0.9~\text{or}~(\cos{\Delta \phi (\tauh,\ETslash)} > 0.9~\text{and}~m_{\text{T}}(\mu,\ETslash) > 150~\gev)$;
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)\quad.
+\end{itemize}
+
+The distributions of these variables after preselection, and after
+selection requirements on the other variables, are shown in
+Figure~\ref{fig:mt_nm1_distributions}.
+\begin{figure}\centering
+  \includegraphics[width=0.31\textwidth]{figures/n_1/mt/met_mt}
+  \includegraphics[width=0.31\textwidth]{figures/n_1/mt/cosDPhi_mt}
+  \includegraphics[width=0.31\textwidth]{figures/n_1/mt/nb_mt}
+  \caption{\label{fig:mt_nm1_distributions} (Data driven W+Jets and QCD with only statistical uncertainties) 
+Distributions of the variables used for \tmth signal selection, after all other signal 
+selection requirements on variables other than the one plotted:
+    \ETslash (left), $\cos{\Delta \phi (\mu,\tauh)}$ (middle, with $\cos{\Delta \phi (\mu, \tauh)} > 0$) and $n_b$ (right).}
+\end{figure}
+
+The Standard Model processes considered as backgrounds are Drell-Yan,
+di-boson production, top quark single and pair production, W+jets
+production, and QCD multi-jet production.
+
+\subsection{Genuine dilepton events}
+
+Studies of simulated events indicate that for Drell-Yan process, top
+quark single and pair production, and di-boson production, the
+reconstructed and selected electrons and hadronic taus are typically
+associated with genuine simulated leptons.  The nominal expected event
+rates are estimated by scaling the simulated samples by the best
+available cross sections, listed in Table~\ref{tab:mc_samples}, and by
+the integrated luminosity of the data samples.
+
+\subsubsection{Drell-Yan process}
+Due to large W+Jets and QCD contamination, as shown in the left panel of 
+Figure~\ref{fig:mt_dy_tt} with the following selections:
+\begin{itemize}
+  \item $\ETslash<30~\gev$;
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose);
+  \item $\cos{\Delta \phi (\mu,\ETslash)} > 0.9~\text{or}~\cos{\Delta \phi (\tauh,\ETslash)} > 0.9$;
+  \item 60 GeV $<$ \meffmtau $<$ 150 GeV\quad,
+\end{itemize}
+
+we use the Drell-Yan rate systematic uncertainty (5\%) estimated from
+the \tetm final state in~\ref{sec:em_DY} for its higher Drell-Yan 
+purity. However, we cross check this here and compare the Drell-Yan 
+rate between data and MC:
+\begin{equation}\label{eq:mt_DY}
+\frac{\text{data - non-Drell-Yan backgrounds}}{\text{MC Drell-Yan}} = 1.04 \pm 0.03 \quad,
+\end{equation}
+which agrees with the measurement in in~\ref{sec:em_DY}.
+
+\subsubsection{$t\bar{t}$ and single top processes process}\label{sec:mt_tt}
+For \tmth, we estimate the \ttbar + single top production rate
+systematics (1\%), from  \tetm final state, as described in 
+~\ref{sec:em_tt}, for its higher top purity.  To accommodate 
+the difference between data and theoretical calculations in \ttbar 
+differential cross section, \ttbar events are reweighted based 
+on the momentum of the top quarks and the latest scale factors 
+recommended by the Top POG.
+
+However we cross check this in a \tmth top-rich region, 
+defined by the following selections and shown in the right 
+panel of Figure~\ref{fig:mt_dy_tt}:
+\begin{itemize}
+  \item $\cos{\Delta \phi (\mu,\tau_{h})}<-0.95$
+  \item $\ETslash>30~\gev$
+  \item $\cos{\Delta \phi (\mu,\ETslash)} > 0.9~\text{or}~(\cos{\Delta \phi (\tau_{h},\ETslash)} > 0.9~\text{and}~m_{\text{T}}(\mu,\ETslash) > 150~\gev)$
+  \item at least one jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+\end{itemize}
+The $t\bar{t}$ + single top data/MC overall agreement is estimated to be:
+\begin{equation}\label{eq:mt_tt}
+\frac{\text{data - non $t\bar{t}$ + single top backgrounds}}{\text{MC $t\bar{t}$ + single top}}  =  1.02 \pm 0.04 \quad,
+\end{equation}
+which agrees with the measurement in in~\ref{sec:em_DY}. 
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/ControlRegions/DY_check_mt}
+  \includegraphics[width=0.45\textwidth]{figures/ControlRegions/ttbar_check_mt}
+  \caption{\label{fig:mt_dy_tt} (Data driven W+Jets and QCD with only statistical uncertainties) 
+Distributions of \meffmtau. Left:
+    validation region with $\ETslash<30~\gev$, $n_b = 0$ and $60<\gev$ \meffmtau $<$ 150 GeV.  Right:
+    validation region with $n_b\geq1$.}
+\end{figure}
+
+\subsubsection{Di-boson process}
+Di-boson processes are a relatively small background in the muon + 
+hadronic tau channel. They are estimated directly from simulation with 
+a 20\% systematic uncertainty measured from the electron + muon channel 
+in section \ref{section:diBoson}.
+    
+\subsection{QCD multi-jet background}\label{sec:mtau_qcd}
+For a given variable and binning, e.g. the effective mass variable
+used for signal extraction, we construct a data-driven template for
+the shape of the QCD multi-jet background, i.e. the processes lacking
+prompt leptons.  Based on the charge of the final state, the muon 
+relative isolation and \tauh isolation, we split the events into 
+four regions shown in Figure~\ref{fig:ABCDEF} and described below:
+\begin{itemize}
+  \item A (Signal) Region: $\mu$ and \tauh have opposite charge, $\mu$ relative isolation is less than $0.15$, and \tauh pass "Tight" isolation requirement.
+  \item B Region: $\mu$ and \tauh have same charge, $\mu$ relative isolation is less than $0.15$, and \tauh pass "Tight" isolation requirement.
+  \item E Region: $\mu$ and \tauh have opposite charge, $\mu$ relative isolation is between $0.15$ and $1.0$, and \tauh fail "Tight" isolation requirement.
+  \item F Region: $\mu$ and \tauh have same charge, $\mu$ relative isolation is between $0.15$ and $1.0$, and \tauh fail "Tight" isolation requirement.
+\end{itemize}
+
+\begin{figure}\centering
+  \includegraphics[width=0.9\textwidth]{figures/backgroundEstimation/ABCDEF}
+  \caption{\label{fig:ABCDEF} Data driven QCD and W+jets estimation and validation strategy for the \teth, \tmth channels.}
+\end{figure}
+In region B, QCD events are estimated by subtracting events
+with genuine leptons (estimated by simulation) bin-by-bin from data. In regions E and F, 
+due to the very high purity of QCD events, QCD is estimated directly as the observed 
+events. QCD events are assumed to be charge blind, thus, the amount of QCD events 
+in region B should be comparable to that of in the signal region. However, with the 
+freedom to define the anti-isolation region, we choose an anti-isolation definition 
+such that QCD purity (98\%) is much higher compared to the signal region. 
+Taking the QCD shape from region E will help us reduce the effects of potential 
+mis-modeling of other backgrounds on QCD estimation.
+
+Hence, QCD events in the signal region are estimated with the shape from region E 
+(excluding MC contribution in region E as QCD purity is $> 98\%$) and multiplying 
+a "QCD loose to tight" scale factor derived from regions B and F. Given the high 
+purity (98\%) of QCD in region F, QCD is taken straight from data in region F. 
+The factor is defined as:
+\begin{equation}\label{eq:et_qcd_sf}
+f_\mathrm{LT}^\mathrm{QCD} = \left(N_\mathrm{data}^\mathrm{B} - N_\mathrm{non-QCD~MC}^\mathrm{B}\right)
+/ N_\mathrm{data}^\mathrm{F}\quad.
+\end{equation}
+
+As a summary, the QCD distribution in the signal region is estimated as the following:
+\begin{equation}
+(\text{QCD distribution})_{\text{A}} = f_\mathrm{LT}^\mathrm{QCD} \times (\text{data distribution})_{\text{E}} 
+\end{equation}
+
+Table \ref{table:SF_QCD_mt} shows the yields of data and MC samples in regions B 
+and F used for the calculation of $f_\mathrm{LT}^\mathrm{QCD}$.
+
+{\renewcommand{\arraystretch}{1.3}%
+\begin{table}
+   \caption{\label{table:SF_QCD_mt} Event yields in regions B and F used for the calculation of $f_\mathrm{LT}^\mathrm{QCD}$.}
+   \centering{
+     \begin{tabular}{ | l | c | c | }
+        \hline \hline
+        Process                         & region B          & region F      \\ \hline
+        Z + jets                        & 189 $\pm$ 28      & 13 $\pm$ 8    \\ \hline
+        $t\bar{t}$                      & 67 $\pm$ 5        & 16 $\pm$ 2    \\ \hline
+        W + jets                        & 745 $\pm$ 134     & 76 $\pm$ 35   \\ \hline
+        DiBoson                         & 19 $\pm$ 2        & 0.6 $\pm$ 0.3 \\ \hline
+        non-QCD background              & 1020 $\pm$ 137    & 106 $\pm$ 36  \\ \hline
+        Data                            & 2197              & 6452          \\ \hline \hline
+        Data - non-QCD background       & 1177 $\pm$ 137    & 6452          \\ \hline
+        $f_\mathrm{LT}^\mathrm{QCD}$    &  \multicolumn{2}{c|}{0.18 $\pm$ 0.02} \\ \hline
+     \end{tabular}
+   }
+ \end{table}}
+
+This QCD estimation method is valid only if the QCD shape in the 
+anti-isolated region correctly models the QCD shape in the isolated
+region. The check is done by comparing the observation and background
+estimation in region B with the QCD shape taking from region F and
+normalized to the QCD in region B.  An example of this test is shown
+in the left panel of Fig.~\ref{fig:mt_dataDrivenChecks}. Here, W+jets 
+is estimated directly from MC simulations. Overall, the data and 
+estimated background agrees reasonably. Due to low statistics of 
+the W+jets MC sample, some bins disagree by 20\%.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/mt/regionB_mt}
+  \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/mt/WJets_SF_mt}
+  \caption{\label{fig:mt_dataDrivenChecks} (Only statistical uncertainties are included) 
+Distributions of \meffmtau. Left:
+    in region B with signal region selections (data driven QCD and MC based W+jets).  Right:
+    in region A' with signal region like selections (data driven QCD and W+jets).}
+\end{figure}
+
+\subsection{W+jets background}
+\label{sec:mt_w_bkg_validation}
+
+The simulated W+jets samples, especially at low \HT, were not
+generated with large MC statistics.  If used directly, avoiding
+non-smooth templates restricts somewhat the choice of signal selection
+and binning.  It also complicates the validation of the background
+estimates.  As a workaround, similar to the QCD estimation, we construct 
+a data-driven template for the shape of the W+jets background in a control 
+region with high W+jets purity. Based on the charge of the final state and 
+\tauh isolation, we split the events into four regions shown in 
+Fig.~\ref{fig:ABCDEF} and described below:
+\begin{itemize}
+  \item A (Signal) Region: $\mu$ and \tauh have opposite charge, $\mu$ relative isolation is less than $0.15$, and \tauh pass "Tight" isolation requirement.
+  \item B Region: $\mu$ and \tauh have same charge, $\mu$ relative isolation is less than $0.15$, and \tauh pass "Tight" isolation requirement.
+  \item C Region: $\mu$ and \tauh have opposite charge, $\mu$ relative isolation is less than $0.15$, and \tauh pass "VeryLoose" isolation requirement but fail "Tight" isolation requirement.
+  \item D Region: $\mu$ and \tauh have same charge, $\mu$ relative isolation is less than $0.15$, and \tauh pass "VeryLoose" isolation requirement but fail "Tight" isolation requirement.
+\end{itemize}
+
+In most of the cases, W+jets passes our signal region selection by having a jet 
+faking the reconstructed \tauh. Thus, by relaxing the \tauh ID, in region C and D, 
+one would greatly increase the acceptance of W+jets events.
+
+W+jets event in the signal region is estimated by applying a "jet to tau fake rate" 
+to the estimated W+jets events in region C as the following:
+
+\begin{equation}
+(\text{W+jets distribution})_{\text{A}} = f_{\text{jet}\rightarrow\tau} \times (\text{W+jets distribution})_{\text{C}} 
+\end{equation}
+
+where the W+jets distribution in region C is estimated by subtracting 
+non W+jets events with genuine leptons (estimated by simulation) and 
+data-driven QCD events bin-by-bin from data. The data-driven QCD events 
+in region C is estimated from the previously mentioned region E with a 
+scale factor ($f^{\text{QCD}}_{\text{FtoD}}$) to properly transfer the 
+yield from region E to C. The data-driven QCD estimation in region C 
+can be summarized as: 
+
+\begin{equation}
+(\text{QCD distribution})_{\text{C}} = f^{\text{QCD}}_{\text{FtoD}} \times (\text{data distribution})_{\text{E}} 
+\end{equation}
+where $f^{\text{QCD}}_{\text{FtoD}} = \left(N_\mathrm{data}^\mathrm{D} - N_\mathrm{non-QCD~MC}^\mathrm{D}\right)/ N_\mathrm{data}^\mathrm{F}$
+
+To properly estimate the most relevant (closest to our signal region as possible) 
+"jet to tau fake rate" from data, we construct a W+jets rich region with the 
+following selections:
+\begin{itemize}
+  \item $\cos{\Delta \phi (\mu,\tau_{h})}<-0.95$;
+  \item $\ETslash>30~\gev$;
+  \item $0.5 < \cos{\Delta \phi (\mu,\ETslash)} < 0.9~\text{and}~55~\gev~< m_{\text{T}}(\mu,\ETslash) < 120~\gev$;
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+\end{itemize}
+Events are further separated in to six regions (A', B', C', D', E' and F') by 
+the same methods as shown in Fig.~\ref{fig:ABCDEF}. The "jet to tau fake rate" 
+is estimated by the following:
+\begin{equation} \label{eq:fakeRate}
+f_{\text{jet}\rightarrow\tau} = \frac{N^{\text{A'}}_{\text{data}} - N^{\text{A'}}_{\text{non-W MC}} - N^{\text{E'}}_{\text{data}}\times f^{\text{QCD}}_{\text{LT}}}
+{N^{\text{C'}}_{\text{data}} - N^{\text{C'}}_{\text{non-W MC}} - N^{\text{E'}}_{\text{data}}\times f^{\text{QCD}}_{\text{FtoD}}}
+\end{equation}
+
+Region A' is shown in the right panel of Fig.~\ref{fig:mt_dataDrivenChecks} 
+with the "jet to tau fake rate" estimated as: $f_{\text{jet}\rightarrow\tau} = 0.25 \pm 0.02$.
+
+\subsection{Validation of Background Estimations}
+Additional to the validation tests shown in Fig.~\ref{fig:mt_dy_tt}, a test 
+to simultaneously check the data driven QCD and W+jets estimations is performed 
+by reverting the $\cos{\Delta \phi (\mu,\tauh)}$ cut in the following configuration:
+\begin{itemize}
+  \item $ -0.95 < \cos{\Delta \phi (\mu,\tauh)} < 0$
+  \item $\ETslash>30~\gev$
+  \item $\cos{\Delta \phi (\mu,\ETslash)} > 0.9~\text{or}~(\cos{\Delta \phi (\tauh,\ETslash)} > 0.9~\text{and}~m_{\text{T}}(\mu,\ETslash) > 150~\gev)$
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+\end{itemize}
+
+Figure~\ref{fig:revertCosDPhi_mt} shows the distributions of \meffmtau, \ETslash, 
+$\mu$ \pt and  \tauh \pt in region A with the above set of selections. 
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth,page=3]{figures/ControlRegions/revertCosDPhi_mt}
+  \includegraphics[width=0.45\textwidth,page=4]{figures/ControlRegions/revertCosDPhi_mt}\\
+  \includegraphics[width=0.45\textwidth,page=1]{figures/ControlRegions/revertCosDPhi_mt}
+  \includegraphics[width=0.45\textwidth,page=2]{figures/ControlRegions/revertCosDPhi_mt}
+  \caption{\label{fig:revertCosDPhi_mt} (Data driven W+Jets and QCD with only statistical uncertainties)
+ Distributions with $ -0.95 < \cos{\Delta \phi (\mu,\tauh)} < 0$ selection. Top: left: 
+\meffmtau right: \ETslash. Bottom: left: $\mu$ \pt right: \tauh \pt.}
+\end{figure}
+
+%%Figure~\ref{fig:signalRegion_mt} shows the distributions of \meffmtau in 
+Figure~\ref{fig:SignalRegionPlot_a} shows the distributions of \meffmtau in 
+the signal region.% with data blinded.
+
+%\begin{figure}\centering
+  %% \includegraphics[width=0.6\textwidth,page=1]{figures/signalRegion/mt_blind}
+%  \includegraphics[width=0.6\textwidth,page=1]{figures/signalRegion/mt}
+%  \caption{\label{fig:signalRegion_mt} (Data driven W+Jets and QCD with only statistical uncertainties)
+% \meffmtau distribution with signal region selections.}
+%\end{figure}

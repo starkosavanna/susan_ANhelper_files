@@ -1,0 +1,483 @@
+\section{Electron + Hadronic Tau Channel}\label{sec:eTauhad}
+%\textbf{Responsible: E. Laird, Z. Mao}
+
+
+\subsection{Event selection}\label{sec:et_selection}
+
+Events must fire the single-electron trigger described in
+Section~\ref{sec:triggers}.  We select reconstructed electrons
+satisfying $p_T>35~\gev$, $\vert\eta\vert<2.1$, with a distance of
+closest approach to the leading sum-$p_T^2$ primary vertex of less
+than 0.045~cm (transvese) and 0.2~cm (longitudinal), passing the tight
+working point of the e/$\gamma$ POG non-triggering MVA ID, having no
+matched conversion nor missing hits, and within $\Delta R<0.5$ of the
+HLT electron that fired the trigger.
+
+Offline $\tauh$'s are required to have $p_{T}> 20~\gev$ and $\vert
+\eta \vert < 2.1$, have a distance of closest approach to the leading
+sum-$p_T^2$ primary vertex of less than 0.2~cm (longitudinal), pass
+the new Decay Mode Finding requirement as either a 1-prong or 3-prong
+$\tauh$, and pass the ``againstElectronVLooseMVA5'' and
+``againstMuonTight3'' identification requirements.
+%The isolation used is ``CombinedIsolationDeltaBetaCorr3Hits.''
+
+We build pairs of electrons and $\tauh$'s in which the electron and
+$\tauh$ are separated by at least $\Delta R > 0.5$.  In events with
+more than one such pair, we select the pair with the two most isolated
+leptons, considering first the electron, and then the $\tauh$.  This
+criterion was seen to have good efficiency for signal samples.  In the
+rare case of multiple such pairs having identical isolation values,
+the reconstructed $p_T$'s are considred, preferring higher values.
+
+%% Following the ID, pt/eta cuts, trigger matching and $dR$ condition
+%% there may still be more than one possible candidate pair. We resolve
+%% this by selecting the pair with the two most isolated leptons, under
+%% the assumption that this gives the highest efficiency for selecting
+%% the correct pair in signal events.  The following is the logic for
+%% comparing two pairs in a sorting algorithm that aims to resolve
+%% ambiguous cases (e.g. multiple candidates with the same isolation
+%% value).\par First prefer the pair with the most isolated candidate 1
+%% (muon for $e\mu$ and electron for $e\tau$).\par If the isolation of
+%% candidate 1 is the same in both pairs, prefer the pair with the
+%% highest candidate 1 pt (for cases of genuinely the same isolation
+%% value but different possible candidate 1).\par If the pt of candidate
+%% 1 in both pairs is the same (likely because it's the same object) then
+%% prefer the pair with the most isolated candidate 2 (tau for $e\tau$
+%% and electron for $e\mu$).\par If the isolation of candidate 2 is the
+%% same, prefer the pair with highest candidate 2 pt (for cases of
+%% genuinely the same isolation value but different possible candidate
+%% 2).
+
+After a pair has been chosen for an event, we apply the following
+isolation requirements on the leptons, for an event to enter the
+signal region: electron relative isolation $<0.15$; \tauh isolation
+``byTightCombinedIsolationDeltaBetaCorr3Hits.''  In order to keep the
+different final states exclusive, an event is rejected if there is an
+additional electron satisfying the above identification requirements
+and with relative isolation $<0.3$, or a muon satisfying the
+identification requirements described in
+Section~\ref{sec:em_selection} with relative isolation $<0.3$.  To
+reduce further possible di-electron events in the $\teth$ channel, an
+event is rejected if there is an opposite-charge electron pair with
+$\Delta R > 0.15$ in which both of the electrons satisfy $p_T >
+15~\gev$, $\vert \eta \vert < 2.5$, the e/$\gamma$ POG ``veto'' ID,
+and relative isolation $<0.3$.
+
+As for the other channels, the signal region is defined as having
+\begin{itemize}
+  \item $\cos{\Delta \phi (e,\tau_{h})}<-0.95$
+  \item $Q(e) \times Q(\tau_{h}) < 0 $
+  \item $\ETslash>30~\gev$
+  \item $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} > -50~\gev$
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+\end{itemize}
+
+The Standard Model processes considered as backgrounds are Drell-Yan,
+di-boson production, top quark single and pair production, W+jets
+production, and QCD multi-jet production.
+
+\subsection{Genuine dilepton events}
+
+Studies of simulated events indicate that for Drell-Yan process, top
+quark single and pair production, and di-boson production, the
+reconstructed and selected electrons and hadronic taus are typically
+associated with genuine simulated leptons.  The nominal expected event
+rates are estimated by scaling the simulated samples by the best
+available cross sections, listed in Table~\ref{tab:mc_samples}, and by
+the integrated luminosity of the data samples.
+
+\subsubsection{Drell-Yan process}
+Due to large W+Jets and QCD contamination, as shown in the left panel of 
+Figure~\ref{fig:et_dy_tt} with the following selections, we use the 
+Drell-Yan rates systematics (12\%) estimated from the \tetm final state in 
+~\ref{sec:em_DY}.
+\begin{itemize}
+  \item $\ETslash<30~\gev$
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+  \item \meffetau $<$ 200 GeV
+\end{itemize}
+
+\subsubsection{$t\bar{t}$ and single top processes process}
+Systematics for $t\bar{t}$ and single top processes are estimated in an top rich 
+region with the following selections and shown in the right panel of 
+Figure~\ref{fig:et_dy_tt}:
+\begin{itemize}
+  \item $\cos{\Delta \phi (e,\tau_{h})}<-0.95$
+  \item $\ETslash>30~\gev$
+  \item $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} > -50~\gev$
+  \item at least one jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+\end{itemize}
+The $t\bar{t}$ + single top production rate systematics estimated to be:
+\begin{equation}\label{eq:tt}
+\text{$t\bar{t}$ + single top systematics} = \left| 1 - \frac{\text{$t\bar{t}$ + single top}}{\text{Data - other backgrounds}}\right| = 5\%
+\end{equation}
+For \teth, we take the $t\bar{t}$ + single top production rate systematics (8\%)
+estimated in the \tetm final state in ~\ref{sec:em_tt} which has higher top purity
+and a more conservative value.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/Data_MC_Comparison/et_DY_Validation_Met_lessThan30_nCSVL_lessThan1_closeUp}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/ttbar_check}
+  \caption{\label{fig:et_dy_tt} Distributions of \meffetau. Left:
+    validation region with $\ETslash<30~\gev$, $n_b = 0$ \meffetau $<$ 200 GeV.  Right:
+    validation region with $n_b\geq1$.}
+\end{figure}
+
+\subsubsection{Di-boson process}
+We take di-boson processes directly from simulation with a 15\% production uncertainty.
+
+    
+\subsection{QCD multi-jet background}\label{sec:etau_qcd}
+For a given variable and binning, e.g. the effective mass variable
+used for signal extraction, we construct a data-driven template for
+the shape of the QCD multi-jet background, i.e. the processes lacking
+prompt leptons.  Based on the charge of the final state and \tauh isolation,
+we split the events into four regions shown in Figure~\ref{fig:ABCD} and 
+described below:
+\begin{itemize}
+  \item A (Signal) Region: e and \tauh have opposite charge and \tauh pass "Tight" isolation requirement.
+  \item B Region: e and \tauh have same charge and \tauh pass "Tight" isolation requirement.
+  \item C Region: e and \tauh have opposite charge and \tauh pass anti-isolation requirement.
+  \item D Region: e and \tauh have same charge and \tauh pass anti-isolation requirement.
+\end{itemize}
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/figs/ABCD}
+  \caption{\label{fig:ABCD} QCD estimation and validation strategy for the \teth channel.}
+\end{figure}
+In each region (B, C, D), QCD events are estimated by subtracting events
+with genuine leptons (estimated by simulation) bin-by-bin from data.
+QCD events are assumed to be charge blind, thus, the amount of QCD events in region B should be 
+comparable to that of in the signal region. However, with the freedom to define the
+anti-isolation region, we choose an anti-isolation definition such
+that there are much more QCD in region C compared to the signal region. 
+Taking the QCD shape from region C will provide us 
+a much smoother template for QCD estimation.
+
+Hence, QCD events in the signal region are estimated with the shape from region C 
+and multiplying a scale factor derived from regions B and D. The factor is defined as:
+\begin{equation}\label{eq:et_qcd_sf}
+f_\mathrm{LT}^\mathrm{QCD} = \left(N_\mathrm{data}^\mathrm{B} - N_\mathrm{MC}^\mathrm{B}\right)
+/ \left(N_\mathrm{data}^\mathrm{D} -
+N_\mathrm{MC}^\mathrm{D}\right)\quad.
+\end{equation}
+
+This QCD estimation method is valid only if the QCD shape in anti-isolated 
+correctly models the QCD shape in the isolated region. The check is done 
+by comparing the observation and background estimation in region B with 
+the QCD shape taking from region D and normalized to the QCD in region B. 
+An example of this test is shown in the right panel of Figure~\ref{fig:sst} 
+with the anti-isolation definition as: \tauh isolation failing the "Tight" 
+working point but below 5.0\gev. 
+
+With the freedom to define the \tauh anti-isolation region, before the 
+signal region selections so there is enough statistics, we scan 
+through different anti-isolation definitions as shown in Figure~\ref{fig:et_scans} 
+where the x-axis labels the start of the anti-isolation region and the 
+y-axis labels the end. With each anti-isolation definition, we perform 
+the check mentioned above and calculate $\chi^2$ between observation 
+and background estimation. The p-value of the $\chi^2$ tests for each 
+anti-isolation definition is shown on the cells in the right panel 
+of Figure~\ref{fig:et_scans}. The left panel of Figure~\ref{fig:et_scans} shows 
+the same test but with $f_\mathrm{LT}^\mathrm{QCD}$ instead in each cell.
+
+Based on the following criteria:
+\begin{itemize}
+  \item good results from $\chi^2$ test
+  \item low "Loose-to-Tight" scale factor ($f_\mathrm{LT}^\mathrm{QCD}$) to ensure a smooth template
+\end{itemize}
+
+The range of isolation failing the tight working point, but below 5.0\gev, was chosen as the
+sideband with. After the signal region selection the "Loose-to-Tight" scale factor is estimated
+to be: $0.13 \pm 0.02$ where an additional 15\% uncertainty is added to the QCD systematics 
+on top of the bin-by-bin systematics.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth,page=68]{figures/et-em/antiIsolationScan/et_puweight_chi2_SS_123prong_antiIsoScan} %% et_SS_chi2Scan_SF
+  \includegraphics[width=0.45\textwidth,page=67]{figures/et-em/antiIsolationScan/et_puweight_chi2_SS_123prong_antiIsoScan} %% et_SS_chi2Scan_p_value
+  \caption{\label{fig:et_scans} \teth channel: scan of the range of
+    relaxed isolation for the $\tau_h$.  Left: text within each bin
+    gives the normalization factor applied to same-charge iso-relaxed
+    events (``loose to tight'' factor); the color axis matches the
+    right plot.  Right: $\chi^2$-probability of the agreement between
+    the predicted and observed distributions of tightly-isolated
+    same-charge events.}
+\end{figure}
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/antiIsolationScan/em_SST}
+  \includegraphics[width=0.45\textwidth,page=6]{figures/et-em/antiIsolationScan/et_puweight_chi2_SS_123prong_antiIsoScan} %% et_SST
+  \caption{\label{fig:sst} The distributions of reconstructed parent
+    mass in the same-charge, tightly-isolated sample.  Left: \tetm
+    channel: \meffemu.  Right: \teth channel: \meffetau.}
+\end{figure}
+
+
+\subsection{W+jets and validation of total estimated background}
+\label{sec:et_w_bkg_validation}
+
+The simulated W+jets samples, especially at low \HT, were not
+generated with large statistics.  If used directly, avoiding
+non-smooth templates restricts somewhat the choice of signal selection
+and binning.  It also complicates the validation of the background
+estimates.  As a workaround, we use a region of relaxed \tauh
+isolation to obtain the simulated shape, and normalize it to the
+integrated MC yield when requiring tight \tauh isolation.
+Figure~\ref{fig:et-w-shape} compares the direct and relaxed
+predictions in the signal region and in the control region discussed
+below. 
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/WJetsClosureTest/highMETlowPZeta0BTag_m_withMET}
+  %% \includegraphics[width=0.45\textwidth]{figures/et-em/WJetsClosureTest/highMETlowPZeta0BTag_mt}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/WJetsClosureTest/signalRegionSelection_m_withMET}
+  \caption{\label{fig:et-w-shape} Left: comparison of the simulated
+    distributions of \meffetau in the signal region, with tight \tauh
+    isolation and with relaxed \tauh isolation.  Right: analogous
+    comparison for the control region described in Section~
+    \ref{sec:et_w_bkg_validation}.}
+\end{figure}
+
+
+To further check the dependency of reconstructed mass shape on
+\tauh isolation, Figure~\ref{fig:et-w-shape2} compares the reconstructed
+mass shape in \tauh isolation sideband 1 with \tauh isolation sideband 2 (defined below).
+
+\tauh isolation sideband 1: \tauh failing "Tight" working point while \tauh iso $<$ 2.5;
+
+\tauh isolation sideband 2: 2.5 $<$ \tauh iso $<$ 5;
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/WJets_Tight_to_2p5_vs_2p5_5}
+  \caption{\label{fig:et-w-shape2} comparison of the simulated
+    distributions of \meffetau in the signal region, with \tauh in isolation sideband 1 and 
+\tauh in isolation sideband 2.}
+\end{figure}
+
+To evaluate the estimated background rate in a signal-depleted and
+W-enriched region, we make the same requirements as for the signal
+region, except require $p_{\zeta} - 3.1 p_{\zeta\mathrm{vis.}}<
+-50~\gev$ (i.e., inverted w.r.t. the signal selection), and allowing
+any value of $\cos{\Delta\phi_{e\tauh}}$ (i.e., relaxed w.r.t. the
+signal selection).  We then scan the W+jets event rate from 1.0 to
+1.25, in steps of 0.05.  For each assumed rate, we redetermine the QCD
+prediction in this control region.  Figure~\ref{fig:etau_w_sf} shows
+the agreement between observations and background estimates at each
+scan point.  A scale factor of $1.15\pm0.10$ gives the best agreement
+in this control region.  The distribution of \meffetau in the
+W-enriched control region, requiring also
+$\cos{\Delta\phi_{e\tauh}}<-0.8$ (to be somewhat closer to the signal
+region), is shown in Figure~\ref{fig:et_meff_flipped_pz}.
+
+\begin{figure}\centering
+  \includegraphics[width=0.3\textwidth,page=5]{figures/et-em/WJetsSFScan/et_puweight_OS_signalRegionReversePZeta_1and3prong_mt}
+  \includegraphics[width=0.3\textwidth,page=6]{figures/et-em/WJetsSFScan/et_puweight_OS_signalRegionReversePZeta_1and3prong_mt}
+  \includegraphics[width=0.3\textwidth,page=7]{figures/et-em/WJetsSFScan/et_puweight_OS_signalRegionReversePZeta_1and3prong_mt}\\
+  \includegraphics[width=0.3\textwidth,page=8]{figures/et-em/WJetsSFScan/et_puweight_OS_signalRegionReversePZeta_1and3prong_mt}
+  \includegraphics[width=0.3\textwidth,page=9]{figures/et-em/WJetsSFScan/et_puweight_OS_signalRegionReversePZeta_1and3prong_mt}
+  \includegraphics[width=0.3\textwidth,page=10]{figures/et-em/WJetsSFScan/et_puweight_OS_signalRegionReversePZeta_1and3prong_mt}
+  \caption{\label{fig:etau_w_sf} Distributions of
+    $m_\mathrm{T}\left(e,\ETslash\right)$ obtained in the W-enriched
+    control region, when scanning the W+jets event rate from 1.0 to
+    1.25 times its nominal value, in steps of 0.05.  For each assumed
+    W+jets event rate, the QCD prediction is determined anew using the
+    procedure described in Section~\ref{sec:etau_qcd}.}
+\end{figure}
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/Data_MC_Comparison/et_puweight_OS_signalRegionReversePZeta_1and3prong}
+  \caption{\label{fig:et_meff_flipped_pz} The distributions of
+    reconstructed parent mass in the validation region, \teth channel:
+    \meffetau.}
+\end{figure}
+
+The expected SM event yields in the signal region, in a fixed-width
+binning, are shown in Figure~\ref{fig:etau_sm_template}.
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/backgroundTemplates/et_puweight_OS_signalRegion_1and3prong}
+  \caption{\label{fig:etau_sm_template} Expected event yields for the
+    SM processes in the \teth channel.  The data histogram is not
+    shown in order to remain ``blind.''}
+\end{figure}
+
+
+
+\subsection{Background checks in data excess region}
+\label{sec:bkg_validation_in_data_excess_region}
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/excessCloseUp}
+  \caption{\label{fig:closeUp} The distributions of
+    reconstructed parent mass between 300 to 600 GeV, \teth channel:
+    \meffetau.}
+\end{figure}
+
+The background composition for \meffetau in region 
+[300, 600] is shown in Figure~\ref{fig:closeUp}. As shown, the dominating 
+background in this region is W+Jets, consisting of around 55\% of the total 
+background, followed by QCD accounting for 19\% and $t\bar{t}$ accounting for 16\%
+of the total background.
+
+\subsubsection{W+Jets checks}
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/mt_distribution}
+  \caption{\label{fig:mT} The distributions of
+    transverse mass, \teth channel:$m_T$}
+\end{figure}
+
+Addition to the checks mentioned in ~\ref{sec:et_w_bkg_validation}, based on $m_T$ 
+distribution as shown in Figure~\ref{fig:mT}, we require $60~\text{GeV} < m_T < 120~\text{GeV}$
+to compare data v.s estimated background in a W+Jets rich region. From 
+Figure~\ref{fig:60_mT_120} it is easy to conclude that the W+Jets shape 
+estimated from the relaxed \tauh isolation region provides a much
+smoother template and agrees much better with observations.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/WJets_non_Iso_60_mt_120}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/WJets_iso_60_mt_120}
+  \caption{\label{fig:60_mT_120} Left: The distributions of
+    reconstructed parent mass with W+Jets shape estimated from
+    relaxed \tauh isolation region. Right: The distributions of
+    reconstructed parent mass with W+Jets shape estimated from
+    tight \tauh isolation region., \teth channel:
+    \meffetau.}
+\end{figure}
+
+A direct comparison of the W+Jets shape is shown in Figure~\ref{fig:WJets_60_mT_120}
+where we can see the significant upwards fluctuation of W+Jets in the tight \tauh 
+isolation region for \meffetau regions of [300, 600].
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/WJets_iso_vs_non-Iso_60_mt_120}
+  \caption{\label{fig:WJets_60_mT_120} Comparison of the simulated
+    distributions of \meffetau in the signal region requiring 
+    $60~\text{GeV} < m_T < 120~\text{GeV}$, with tight \tauh
+    isolation and with relaxed \tauh isolation.
+    \teth channel:\meffetau}
+\end{figure}
+
+For $m_T > 120~\text{GeV}$, W+Jets shape comparisons and distributions of \meffetau are shown
+in Figure~\ref{fig:120_mT}. From the plot on the left, we can see the W+Jets shape from relaxed 
+and tight \tauh isolation region agrees well in high mass regions. Due to low statistics, it 
+is difficult to conclude if there are any excess in \meffetau regions [300, 600]. Overall, 
+W+Jets shape estimated from the relaxed \tauh isolation region agrees better with observations.
+
+\begin{figure}\centering
+  \includegraphics[width=0.32\textwidth]{figures/et-em/eTauStudies/WJets_iso_vs_non-Iso_120_mt}
+  \includegraphics[width=0.32\textwidth]{figures/et-em/eTauStudies/WJets_non_Iso_120_mt}
+  \includegraphics[width=0.32\textwidth]{figures/et-em/eTauStudies/WJets_iso_120_mt}
+  \caption{\label{fig:120_mT} In the signal region requiring 
+    $m_T > 120~\text{GeV}$: Left: Comparison of the simulated
+    distributions of \meffetau, with tight \tauh isolation and 
+    with relaxed \tauh isolation. Center: The distributions of
+    reconstructed parent mass with W+Jets shape estimated from
+    relaxed \tauh isolation region. Right: The distributions of
+    reconstructed parent mass with W+Jets shape estimated from
+    tight \tauh isolation region. \teth channel}
+\end{figure}
+
+In the signal rich region, with $m_T < 60~\text{GeV}$, the left plot
+in Figure~\ref{fig:mT_60} shows the good agreement between the W+Jets 
+shape from relaxed and tight \tauh isolation regions. The center and right
+plot further shows that the excess seen in the high \meffetau region cannot be
+explained by W+Jets MC shape variations between relaxed and tight \tauh
+isolation regions
+
+\begin{figure}\centering
+  \includegraphics[width=0.32\textwidth]{figures/et-em/eTauStudies/WJets_iso_vs_non-Iso_mt_60}
+  \includegraphics[width=0.32\textwidth]{figures/et-em/eTauStudies/WJets_non_Iso_mt_60}
+  \includegraphics[width=0.32\textwidth]{figures/et-em/eTauStudies/WJets_iso_mt_60}
+  \caption{\label{fig:mT_60} In the signal region requiring 
+    $m_T < 60~\text{GeV}$: Left: Comparison of the simulated
+    distributions of \meffetau, with tight \tauh isolation and 
+    with relaxed \tauh isolation. Center: The distributions of
+    reconstructed parent mass with W+Jets shape estimated from
+    relaxed \tauh isolation region. Right: The distributions of
+    reconstructed parent mass with W+Jets shape estimated from
+    tight \tauh isolation region. \teth channel}
+\end{figure}
+
+2-prong \tauh's were rejected in the \teth due low signal presence and
+high W+Jets and QCD contamination. Hence, this region is a perfect testing area
+for our background estimation methods. As shown in Figure~\ref{fig:2prong}
+there is a good agreement between data and estimated background. Which further
+validates our modeling of the W+Jets and QCD background. 
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/2prong}
+  \caption{\label{fig:2prong} In the signal region requesting
+    2 prong \tauh, the distributions of reconstructed parent mass with
+    W+Jets shape estimated from relaxed \tauh isolation region.
+    \teth channel: \meffetau}
+\end{figure}
+
+\subsubsection{QCD checks}
+From prior checks we have concluded that the W+Jets \meffetau shape is mostly
+independent of the \tauh isolation region, it is obvious to ask the same
+question for QCD. Figure~\ref{fig:QCD_check_1} compares the data and estimated
+background with W+Jets and QCD shape take from \tauh isolation region 1' and 
+\tauh isolation region 2' as explained below:
+
+\tauh isolation region 1': \tauh failing "Tight" working point while \tauh iso $<$ 5;
+
+\tauh isolation region 2': \tauh failing "Medium" working point while \tauh iso $<$ 4;
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/QCD_from_tight_5}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/QCD_from_medium_4}
+  \caption{\label{fig:QCD_check_1} In the signal region, Left: distributions of 
+    reconstructed parent mass with W+Jets and QCD shape estimated from 
+    \tauh isolation region 1'. Right: distributions of 
+    reconstructed parent mass with W+Jets and QCD shape estimated from 
+    \tauh isolation region 2'. 
+    \teth channel: \meffetau}
+\end{figure}
+
+Here, we see the change in \tauh isolation region definition does not effect 
+the overall background estimation.
+
+
+Since W+Jets events in the \teth channel most likely consists of one real electron
+while QCD events consists of only jets faking electrons and \tauh's. We can create
+separate W+Jets and QCD rich regions by applying different electron isolation cuts.
+Figure~\ref{fig:eRelIso} shows the data and estimated background comparison in
+W+Jets rich regions (electron relIso $< 0.01$ and $0.01<$ electron relIso $< 0.04$)
+and QCD rich region ($0.04<$ electron relIso $< 0.15$). Here, we see a good
+agreement between data and estimated background in the QCD rich region. An enhanced
+discrepancy between data and estimated background can be seen for regions with
+high signal expectancy.  
+
+\begin{figure}\centering
+  \includegraphics[width=0.32\textwidth]{figures/et-em/eTauStudies/e_0p01}
+  \includegraphics[width=0.32\textwidth]{figures/et-em/eTauStudies/e_0p01_0p04}
+  \includegraphics[width=0.32\textwidth]{figures/et-em/eTauStudies/e_0p04_0p15}
+  \caption{\label{fig:eRelIso} In the signal region, Left: distributions of 
+    reconstructed parent mass requiring eRelIso < 0.01. Center: distributions of 
+    reconstructed parent mass requiring 0.01 < eRelIso < 0.04. Right: 
+    distributions of reconstructed parent mass requiring 0.04 < eRelIso < 0.15. 
+    \teth channel: \meffetau}
+\end{figure}
+
+
+\subsubsection{$t\bar{t}$ checks}
+A $t\bar{t}$ rich region was constructed by reverting the b-veto requirement with
+the selections below:
+\begin{itemize}
+  \item $\cos{\Delta \phi (e,\tau_{h})}<-0.95$
+  \item $Q(e) \times Q(\tau_{h}) < 0 $
+  \item $\ETslash>30~\gev$
+  \item $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} > -50~\gev$
+  \item at least one jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+\end{itemize}
+
+Figure~\ref{fig:ttbar} shows a good agreement of data and estimated background in this region.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/eTauStudies/ttbar_check}
+  \caption{\label{fig:ttbar} In the signal region with at least 
+    one jet with $p_T>30\gev$ tagged as a b-jet (CSV loose),
+    the distributions of reconstructed parent mass with
+    W+Jets shape estimated from relaxed \tauh isolation region.
+    \teth channel: \meffetau}
+\end{figure}
+

@@ -1,0 +1,83 @@
+\section{Strategy}\label{sec:strategy}
+%% \textbf{Responsible: A. Gurrola, T. Kamon, F. Romeo, E. Laird} 
+%\iffalse
+
+A $\tau$ lepton is the heaviest known lepton with a mass of 1.777 GeV/$c^2$ and a lifetime of $2.9\times10^{-13}$ seconds. Around one third of
+all $\tau$ leptons decay to $e/\mu$, and the remainder decay into hadronic jets ($\tau_{h}$). 
+In the latter case, a $\tau_{h}$ consists of one, three, or (rarely) five charged mesons usually accompanied by one or
+more neutral pions.
+
+%As the $\tau$ lepton decays to $e\overline{\nu}_e}\nu_{\tau}~(17.8\%)$, $\mu\overline{\nu}_\mu}\nu_{\tau}~(17.4\%)$, and hadrons +
+%$\nu_{\tau}~(64.8\%)$ we will refer to these decays as the $e$ decay channel, $\mu$ decay channel, and the  $\tau_\textrmr{h}$ decay
+%channel. 
+
+Four $\tau\tau$ final states, $\tau_\Pe \tau_{\mu}$, $\tau_\Pe \tauh$,
+$\tau_{\mu} \tauh$, and \ditauhad, are selected, where $\tau_\ell$ ($\ell = \Pe,\mu$) and \tauh
+refer to the leptonic and hadronic decay modes of the $\tau$ lepton, respectively.
+%We consider four distinct analyses for pairs of $\tau$ lepton decays, namely \emu ~(6.2\%), \etau ~(23.1\%), \mutau  ~(22.5\%), and
+%\ditauhad ~(42\%). 
+We ignore the \EE and \MM channels due to the copious Drell-Yan
+Z/$\gamma^*\rightarrow e^+e^-, \mu^+\mu^-$ production, although there is ongoing development of algorithms to discriminate prompt $e/\mu$ from $\tau$ lepton 
+decays to light leptons which will be utilized with the 2016 data/analysis.
+
+The overall strategy of the analysis is similar in all channels and analogous to previous iterations of this analysis with a few improvements which we point out below. 
+In general, we identify events with two oppositely charged, nearly back--to--back objects. Because the $\tau\tau$ system decays with up
+to four neutrinos, we expect to have missing transverse energy (\MET) present in the event. In contrast to \zprime searches in the
+$e^+e^-$ and $\mu^+\mu^-$ channels, the visible \ditau mass does not produce a narrow peak due to the missing neutrinos.
+Instead, we look for a broad enhancement in the \ditau$+$\MET invariant mass distribution consistent with new physics. The two main topological changes to the selections 
+with respect to previous iterations of this analysis are: (1) the addition of a cut on the transverse mass between the $\tau_{\mu}$/$\tau_\Pe$ and $\MET$ in order to reduce the W+jets background 
+in the $\tau_\Pe \tauh$ and $\tau_{\mu} \tauh$ channels. (2) the addition of a cut on the difference in azimuthal angle ($\Delta \phi$) between each of the tau legs and the $\MET$. This helps 
+suppress SM backgrounds, while also providing one way to minimize the overlap of this analysis, which targets DY production of $Z^\prime$ bosons (i.e. $q\bar{q} \to Z^\prime$), with the ongoing 
+VBF $Z^\prime$ analyses. As usual, our selections maintain high efficiency for signal events (order 10-20\%), provide strong background suppression, and reduce the influence of systematic
+effects.  
+
+As \zditau is both a background as well as an important validation for our signal process, our final selection requirements are such that by removing or
+reversing just a few cuts we can obtain a relatively clean sample of \zditau events. We note that this is now possible also in the fully hadronic channel due 
+to the improvements in the ditau trigger, allowing us to lower the p$_{T}$ thresholds on $\tauh$, and the improved $\tauh$ identification algorithms, which reduce the jet-$\tauh$ misidentification 
+rate by about a factor of two. This also means the QCD multijet background yield is lower, particularly at high reconstructed ditau mass. The detailed trigger efficiency and $\tauh$ identitication 
+efficiency/fake-rate studies are included in Sections 3--5. 
+
+In order to ensure robustness of 
+the analysis and our confidence in the results, whenever possible we rely on the data itself to understand and validate the efficiency of reconstruction
+methods as well as the estimation of the background contributions. For that purpose we define control regions with most of the
+selections similar to what we use in our main search but enriched with events from background processes. Once a background enhanced
+region is created, we measure selection efficiencies in those regions and  extrapolate to the region  where we expect to observe our
+signal. In cases where a complete data--driven method is not possible we make use of scale factors, ratio between observed data events
+and expected MC events in the background enhanced region to validate or estimate the background  contribution in the signal region from simulation. Although each
+individual channel could have its own set of requirements, we maintain, wherever possible, consistent definitions and selection
+criteria  between channels. 
+
+In addition to various plots for a given background enriched control region used to estimate its contribution 
+to the signal region, we also provide ``control plots" to assess the level of agreement between data and MC. These control plots are 
+typically produced using a set of ``preselections" where signal contamination is expected to be small and are also produced 
+using final selections after unblinding the signal region (\textbf{we are currently blinded until given the green-light from the conveners}). 
+In general, the DY and top pair contributions to these ``control plots" 
+are taken directly from MC after separately validating, in their respective BG enriched control regions, that the data/MC scale factors are consistent 
+with unity. The QCD shapes and yields are determined entirely from data. QCD accounts for roughly 90\% of the total source of background in the 
+$\tau_{h} \tau_{h}$. The background is estimated using \MET side-bands and $\tau_{h}$-pairs with same and opposite electric charge. 
+The W + jets shapes and yields in these control plots are also data-driven in 
+in cases where the W + jets background is important (i.e. large contribution). In cases where the W + jets background is small in comparison to other backgrounds, 
+the MC-based yields are corrected using data/MC scale factors obtained from the W + jets enriched control samples, while the shapes are taken entirely from simulation. 
+%While the W + jets yields can be done in a data-driven way using scale factors, the shapes for various templates must be taken entirely from MC since 
+%our data-driven background estimation methods are only constructed to extract the final mass templates, and not necessarily for other variables such as 
+%$m_{T}(l,\MET)$, $p_{T}(\tau_{h})$, etc. 
+We caution the reader that while these ``control plots" are useful to help guide the 
+understanding of the analysis and data, in many cases it is not required that they show agreement (e.g. if certain control plots are dominated by MC-driven backgrounds or 
+if certain parts of a distribution, such as the tails, are dominated by MC-driven backgrounds). 
+
+To quantify the significance of any possible excess or set upper limits on the production rate, we perform a fit of the $m(\tau_{1},\tau_{2},\MET)$ mass 
+distribution and employ the CL$_{s}$ technique to interpret the results in terms of the upper 95\% credibility level limits
+for each channel. The joint limit is obtained by combining the posterior probability density functions (likelihood) and taking into
+account correlation of systematic uncertainties within and across channels.
+
+The structure of this note is as follows: Sections~\ref{sec:triggers} and~\ref{sec:samples} describes the data sets used in each analysis. 
+Section~\ref{sec:recoID} provides a brief discussion of the reconstruction and identification of the objects used to reconstruct our  $\tau\tau$ 
+pairs.
+%, while Section~\ref{sec:commonSelection} describes the common selection across the four different channels.
+Sections 6--\ref{sec:eMu} describe the specific selections and background extraction methods applied  to each
+individual channel. In Sections~\ref{sec:systematics}--\ref{sec:results} we describe the statistical method used to extract 
+the $95\%$ C.L. upper limits and the results of the analysis. 
+%Finally, Section~\ref{sec:conclusions} summarizes the results and 
+%overall sensitivity.
+
+%\fi

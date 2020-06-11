@@ -1,0 +1,39 @@
+\subsection{Corrections for Pile-Up}
+%\textbf{Responsible: E. Laird, Z. Mao}
+
+Quantities such as \MET and isolation, where energy depositions are
+summed up over some range of the detector, can suffer large
+inefficiencies or systematic effects due to particles from pile-up
+interactions. Therefore, a simple and robust method must be employed
+to subtract off the contribution from secondary interactions.  In the
+case of \MET, this is done by using the FastJet corrections to
+determine the density of PU on an event by event basis. For isolation, the 
+recommended delta-beta corrections are applied. The
+recommended PU corrections have been included for all objects in all
+the channels.
+
+%For taus, $\Delta\beta$ corrections are defined as:
+
+%\begin{equation}
+%   I = \sum_{i} P_{T}^{i, charged} + max(E_{T}^{i, gamma} + E_{T}^{i, neutral} - 0.5 \times E_{T}^{PU} , 0.0)
+%\end{equation}
+
+%where $E_{T}^{PU}$ is the charged particle $p_{T}$ sum from PU vertices. The $\Delta\beta$ correction uses 
+%the fact that the contribution to isolation from neutral particle deposits can be determined by using the 
+%percentage of particle flow charge hadrons considered for isolation that arise from PU. The recommended 
+%PU corrections have been included for all objetcs in all the channels.
+
+We apply event-by-event the ``official'' pile-up weights
+($\sigma=69.2$~mb).  Figure~\ref{fig:nvtx} shows the distributions of
+the number of reconstructed vertices, before and after applying the
+pile-up weights.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/PUReweighting/13TeV_em_OS}
+  \includegraphics[width=0.4\textwidth]{figures/PUReweighting/13TeV_em_puweight_OS} \\
+  \caption{\label{fig:nvtx} Distributions of the number of
+    reconstructed primary vertices in the \emu channel. 
+Left: before reweighting.  Right: after reweighting
+    (``official'' 69.2~mb)}
+\end{figure}

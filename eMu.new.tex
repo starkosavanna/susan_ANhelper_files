@@ -1,0 +1,130 @@
+\section{Electron + Muon Channel}\label{sec:eMu}
+%\textbf{Responsible: E. Laird, Z. Mao}
+
+\subsection{Event selection}\label{sec:em_selection}
+The electron selection is identical to that described in
+Section~\ref{sec:et_selection}.  Muons are required to have $p_{T}>
+10$ GeV and $\vert \eta \vert < 2.1$, with a distance of closest
+approach to the leading sum-$p_T^2$ primary vertex of less than
+0.045~cm (transvese) and 0.2~cm (longitudinal), and to satisfy the
+muon POG medium muon requirement. %, and to have relative isolation (including $\delta\beta$ corrections) $< 0.15$.
+
+We build pairs of electrons and muons in which the electron and muon
+are separated by at least $\Delta R > 0.3$.  In events with more than
+one such pair, we select the pair with the two most isolated leptons,
+considering first the muon, and then the electron.  This criterion was
+seen to have good efficiency for signal samples.  In the rare case of
+multiple such pairs having identical isolation values, the
+reconstructed $p_T$'s are considred, preferring higher values.
+
+After a pair has been chosen for an event, we require both the
+electron and muon relative isolations to be $<0.15$, for an event to
+enter the signal region.  To reduce a possible Drell-Yan background,
+events are rejected if there is an additional electron satisfying the
+requirements described in Section~\ref{sec:et_selection} and with
+relative isolation $<0.3$, or an additional muon satisfying the above
+identification requirements with relative isolation $<0.3$.
+
+As for the other channels, the signal region is defined as having
+\begin{itemize}
+  \item $\cos{\Delta \phi (e,\mu)}<-0.95$
+  \item $Q(e) \times Q(\mu) < 0$
+  \item $\ETslash>30~\gev$
+  \item $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} > -50~\gev$
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+\end{itemize}
+
+\subsection{Genuine dilepton events}
+Studies of simulated events indicate that for Drell-Yan process, top
+quark single and pair production, and di-boson production, the
+reconstructed and selected electrons and hadronic taus are typically
+associated with genuine simulated leptons.  The nominal expected event
+rates are estimated by scaling the simulated samples by the best
+available cross sections, listed in Table~\ref{tab:mc_samples}, and by
+the integrated luminosity of the data samples.
+
+\subsubsection{Drell-Yan process}\label{sec:em_DY}
+Systematics for Drell-Yan process is estimated in an Drell-Yan rich 
+region with the following selections and shown in the left panel of 
+Figure~\ref{fig:em_dy_tt}:
+\begin{itemize}
+  \item $Q(e) \times Q(\mu) < 0$
+  \item $\ETslash<30~\gev$
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+  \item \meffemu $<$ 125 GeV
+\end{itemize}
+The Drell-Yan production rate systematics estimated to be:
+\begin{equation}\label{eq:DY}
+\text{Drell-Yan systematics} = \left| 1 - \frac{\text{Drell-Yan}}{\text{Data - other backgrounds}}\right| = 12\%
+\end{equation}
+which we apply both to \tetm and \teth final states.
+
+\subsubsection{$t\bar{t}$ and single top processes}\label{sec:em_tt}
+Systematics for $t\bar{t}$ and single top processes are estimated in an top quark rich 
+region with the following selections and shown in the right panel of 
+Figure~\ref{fig:em_dy_tt}:
+\begin{itemize}
+  \item $Q(e) \times Q(\mu) < 0$
+  \item $\ETslash>30~\gev$
+  \item $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} < -50~\gev$
+  \item at least one jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)
+\end{itemize}
+The $t\bar{t}$ + single top production rate systematics estimated to be:
+\begin{equation}\label{eq:tt}
+\text{$t\bar{t}$ + single top systematics} = \left| 1 - \frac{\text{$t\bar{t}$ + single top}}{\text{Data - other backgrounds}}\right| = 8\%
+\end{equation}
+which we apply both to \tetm and \teth final states.
+
+\subsubsection{Di-boson process}
+We take di-boson processes directly from simulation with a 15\% production uncertainty.
+
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/Data_MC_Comparison/em_DY_Validation_Met_lessThan30_nCSVL_lessThan1_closeUp}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/Data_MC_Comparison/em_TT_Validation}
+  \caption{\label{fig:em_dy_tt} Distributions of \meffemu. Left:
+    validation region with $\ETslash<30~\gev$, $n_b = 0$ and \meffemu $<$ 125 GeV.  Right:
+    validation region with $\ETslash>30~\gev$, $n_b\geq1$ and $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} < -50~\gev$.}
+\end{figure}
+
+
+
+
+\subsection{QCD multi-jet background}\label{sec:em_qcd}
+The estimation of the QCD background for the \tetm channel is directly
+analogous to that in the \teth channel, except that the sideband is
+defined by the muon isolation.  Figure~\ref{fig:em_scans} shows the
+results of the scanning for a sideband.  The range of relative
+isolation from 0.15 to 0.95 was chosen as the sideband. After the signal 
+region selection the "Loose-to-Tight" scale factor is estimated
+to be: $0.20 \pm 0.08$ where an additional 40\% uncertainty is added to the QCD systematics 
+on top of the bin-by-bin systematics.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/antiIsolationScan/em_SS_chi2Scan_SF}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/antiIsolationScan/em_SS_chi2Scan_p_value}
+  \caption{\label{fig:em_scans} \tetm channel: scan of the range of
+    relaxed relative isolation for the muon.  Left: text within each
+    bin gives the normalization factor applied to same-charge
+    iso-relaxed events (``loose to tight'' factor); the color axis
+    matches the right plot.  Right: $\chi^2$ of the agreement between
+    the predicted and observed distributions of tightly-isolated
+    same-charge events.}
+\end{figure}
+
+
+\subsection{W+jets and validation of total estimated background}
+\label{sec:em_w_bkg_validation}
+In contrast to the \teth channel, the W background is very small, and
+is estimated directly from the simulation.
+
+The expected SM event yields in the signal region, in a fixed-width
+binning, are shown in Figure~\ref{fig:em_sm_template}.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/backgroundTemplates/em_puweight_OS_signalRegion_singleEle}
+  \caption{\label{fig:em_sm_template} Expected event yields for the SM
+    processes in the \tetm channel.  The data histogram is not shown
+    in order to remain ``blind.''}
+\end{figure}
+

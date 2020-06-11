@@ -1,0 +1,63 @@
+\subsection{Muon Reconstruction and Identification}\label{ss:muonreco}
+%\textbf{Responsible: Z.Mao E.Laird}
+
+Muon reconstruction is a multistep process that begins with the information gathered from the muon subdetector. As a
+first step, standalone muons are reconstructed from hits in the individual drift tube (DT) and
+cathode strip (CSC) chambers. Hits from the innermost muon stations are combined with hits in the other muon segments
+using the Kalman-filter technique. The standalone muon trajectory is reconstructed by extrapolating from the
+innermost muon station to the outer tracker surface resulting muon candidates are called ``standalone muons''. 
+This standalone trajectory is then used to find a matching track reconstructed in the inner silicon tracker resulting 
+in a ``global'' muon. Muon reconstruction is described in more detail in \cite{CMS_MUO_10-004}.
+
+%Once a muon is required to have matching tracks in the inner and outer detectors,
+%the main source of background consists of charged hadrons that leave a
+%signature in the inner silicon tracker while also penetrating through the hadronic calorimeter and creating hits in the
+%muon chambers. Charged hadrons that penetrate the hadronic calorimeter and leave hits in the muon system will deposit 
+%significant energy in the calorimeters. Therefore, a calorimeter compatibility algorithm can be used to significantly 
+%reduce the number of charged pion fakes. However, calorimeter compatibility is not used in this analysis due to our 
+%uncertainty of the performance of such algorithms in the presence of high PU. 
+
+The presence of punch-throughs, when a charged hadron penetrates through the hadronic calorimeter and creating hits 
+in the muon chambers, often occur due to pions from the fragmentation of quarks and gluons. These punch-throughs 
+can often be discriminated against by requiring isolation. Similarly, non-prompt muons from heavy flavor decays and 
+decays in flights are expected to be within jets and can be discriminated against by imposing an isolation requirement. 
+Muon identification is described in more detail in \cite{CMS_MUO_10-004} and \cite{CMS_MUO_11-001}.
+
+Isolated muons are required to have minimal energy from PF neutral and charged candidates in a cone of $\Delta R =
+0.4$ around the muon trajectory. PF charged candidates considered in the calculation of isolation are required to be near the 
+primary vertex. Similar to electrons, relative isolation for muons is defined as:
+
+\begin{equation}
+\text{relative combined isolation}~= \frac{\Sigma p_T^{\text{charged had}} + \text{max}[0, \Sigma p_T^{\text{neutral had}} + 
+\Sigma p_T^{\gamma} - 0.5\times\Sigma p_T^{\text{charged hadrons from PU}}]}{p_T^{\text{muon}}}
+\label{eq:muIso}
+\end{equation}
+where the sums run over the charged hadron candidates, neutral hadrons and photons, within a $\Delta R < 0.4$ around 
+the muon direction. The charged hadron candidates are required to originate from the vertex of the event of 
+interest, and $p_T^{\text{charged hadrons from PU}}$ is a correction related to event pileup.
+
+Table~\ref{table:muonidcuts} shows the complete list of cuts for the ``isMedium" $\mu$ identification criteria used in this analysis.
+In all channels, the identification and isolation used follows the POG recommended criteria. 
+
+\begin{table}[ht]
+  \caption{$\mu$ Identification}
+  \centering{
+  \begin{tabular}{| l | c |}
+  \hline\hline
+        Cut \\ [0.5ex] \hline
+        $\textrm{muon::isLooseMuon(recoMu)}$ \\
+        $\textrm{recoMu.innerTrack()-}$$>\textrm{validFraction()}$$> 0.49$ \\
+        AND \\
+        $\textrm{recoMu.isGlobalMuon()}$\\
+        $\textrm{recoMu.globalTrack()-}$$>\textrm{normalizedChi2()}$$< 3$ \\
+        $\textrm{recoMu.combinedQuality().chi2LocalPosition}$$< 12$ \\
+        $\textrm{recoMu.combinedQuality().trkKink}$$< 20$ \\
+        $\textrm{muon::segmentCompatibility(recoMu)}$$> 0.303$ \\
+        OR \\
+        $\textrm{muon::segmentCompatibility(recoMu)}$$> 0.451$ \\
+  \hline
+  \hline
+  \end{tabular}
+  }
+  \label{table:muonidcuts} % is used to refer this table in the text
+\end{table}

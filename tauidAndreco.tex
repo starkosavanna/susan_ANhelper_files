@@ -1,0 +1,150 @@
+\subsection{Tau Reconstruction and Identification}
+The challenge in identifying hadronically decaying taus is discriminating against generic quark and gluon QCD jets 
+which are produced with a cross--section several orders of magnitude larger. In this analysis, the tau POG 
+recommended Hadron Plus Strips algorithm (HPS) is used. HPS gives special attention to photon conversions in 
+the CMS tracker material by reconstructing photons in "strips". These strips are then combined with charged hadrons 
+in attempts to reconstruct the possible tau decay modes outlined in Table~\ref{table:taumodes}.
+
+\begin{table}[ht]
+  \caption{Reconstructed Tau Decay Modes}
+  \centering{
+  \begin{tabular}{| c |}
+  \hline\hline
+        HPS Tau Decay Modes \\ [0.5ex] \hline
+        Single Charged Hadron + Zero Strip \\
+        Single Charged Hadron + One Strip \\
+        Single Charged Hadron + Two Strips \\
+        Two Charged Hadrons \\
+        Three Hadrons \\
+  \hline
+  \hline
+  \end{tabular}
+  }
+  \label{table:taumodes} % is used to refer this table in the text
+\end{table}
+
+The single hadron plus zero strips decay mode attempts to reconstruct $\tau \to \nu\pi^{\pm}$ decays or $\tau \to 
+\nu\pi^{\pm}\pi^{0}$ decays where the neutral pion has very low energy. The single hadron plus one or two 
+electromagnetic strips attempts to reconstruct tau decays that produce neutral pions where the resulting neutral pion 
+decays produce collinear photons. Similarly, the single hadron plus two strips mode attempts to reconstruct taus that 
+decay via e.g. $\tau \to \nu\pi^{\pm}\pi^{0}$ where the neutral pion decays to well separated photons resulting in two 
+electromagnetic strips. The three hadrons decay mode attempts to reconstruct tau decays that occur via 
+$\rho(770)$ resonance. Although it is possible to recover high-$p_{T}$ $\tau_{h}$ candidates with the two-prong decay mode (in the case where one of the
+three prongs is not identified or produces a merged track), this mode is not considered as its inclusion reduces the sensitivity of the analysis (i.e. 
+$\sim 10$\% loss in signal acceptance is substantiated by the factor of 2 per $\tau_{h}$ leg reduction in BG). 
+In all cases, electromagnetic strips are 
+required to have $E_{T} > 1$ GeV/c. Additionally,
+the particle flow charged hadrons are required to be compatible with a common 
+vertex and have a net charge of $|q|=1$.
+
+In order to better separate $\tau_{h}$ from generic quark and gluon QCD jets, in this analysis we use the multivariate 
+(MVA) tau ID discriminator trained with "new" decay mode finding, as provided by the tau POG. This discriminator 
+combines the tau isolation and lifetime information and proves to give the best possible discrimination between 
+real $\tau_{h}$ candidates and hadron jets. Among the various working points, the "Tight" working point is chosen in 
+balance of real $\tau_{h}$ efficiency (60\%) and hadron jet rejection rate ($>$99.8\% for jets with $p_{T} > 50$ GeV). 
+
+In order to discriminate against muons, HPS taus are required to pass the lepton rejection 
+discriminator which requires the lead track of the tau not be associated with a global muon signature. In order to 
+discriminate against electrons, HPS taus are required to pass a MVA discriminator which uses the amount of HCAL energy 
+associated to the tau with respect to the measured momentum of the track (H/p). Additionally, the MVA discriminator 
+considers the amount of electromagnetic energy in a narrow strip around the leading track with respect to the total 
+electromagnetic energy of the tau. Finally, HPS taus must not reside in the ECAL cracks. 
+In all channels, the identification and isolation used follows the Tau POG recommended criteria.
+The exact discriminator names and working points for each channel are listed and described in their respective sections.
+
+
+\iffalse
+
+\subsection{Efficiency of Tau Identification discriminators} \label{sec:tauIDeff}
+The efficiency of the $\tau_{h}$ ID discriminators used in the analysis are studied using $Z^{\prime}_{SSM}$ samples with $m(Z^{\prime}) = 2000$ GeV. For this 
+purpose, we require the reconstructed $\tau_{h}$ to have $p_{T} >$ 20 \gev and pseudorapadity $|\eta| < 2.1$. Further, the reconstructed $\tau_{h}$ is matched to 
+a generator-level visible hadronic tau decay with $\Delta R(\tau_{reco},\tau_{gen}) < 0.3$. The combined efficiency of the ``DecayModeFinding" (DMF) and 
+``TightCombinedDBeta3Hits" discriminators is found to be relatively flat at $\sim 45$\% as shown in the left and middle plots of Figure ~\ref{fig:DMF}. The 
+rightmost plot of Figure ~\ref{fig:DMF} shows the jet$\to\tau_{h}$ fake rate as a function of $p_{T}$, measured using W + jets MC. The individual effiencies of 
+anti-muon , anti-electron and isolation discriminators, relative to the DMF criterion, are shown in Figure ~\ref{fig:ML3}. 
+%Figures ~\ref{fig:ML3}--~\ref{fig:TIso}. 
+The overall efficiency of $\tau_{h}$ ID selection used in this analysis is $\sim 45$\%. 
+%We use the VLoose working point of the anti-electron MVA5 discriminator 
+%as the tighter working points have poor performance (i.e. low efficiency which is 
+%also not ``flat" vs. $p_{T}$). 
+The relative flatness of the $\tau_{h}$ identification efficiency with $p_{T}$ will also facilitate the use of 
+$Z\rightarrow\tau\tau$ events as a "standard candle" for comparison with signal. 
+
+\begin{figure}[tbh!]
+    \centering
+    \begin{tabular}{cc}
+%      \includegraphics[width=0.30\textwidth]{DMF_4_29_16.pdf}
+%      \includegraphics[width=0.30\textwidth]{DMF_eta_4_29_16.pdf}
+%       \includegraphics[width=0.30\textwidth]{DMF_nvtx_4_29_16.pdf}
+      \includegraphics[width=0.30\textwidth]{TauIDEff_Vs_Pt_IsoPlus1or3hps_EXO16008.png}
+      \includegraphics[width=0.30\textwidth]{TauIDEff_Vs_Eta_IsoPlus1or3hps_EXO16008.png}
+       \includegraphics[width=0.30\textwidth]{jetToTauFakeRate_cutBased_EXO16008.png}
+    \end{tabular}
+%    \caption{Decay Mode Finding efficiency as function of $p_{T}$, $\eta$, and number of vertices of generator-level taus }
+    \caption{(Left, Middle) Efficiency of the decay mode finding $+$ isolation requirements (combined) as function of $p_{T}$ and $\eta$. (Right) jet$\to\tau_{h}$ 
+fake rate vs $p_{T}$ in W + jets MC.}
+    \label{fig:DMF}
+  \end{figure}
+ 
+\begin{figure}[tbh!]
+    \centering
+    \begin{tabular}{cc}
+      \includegraphics[width=0.30\textwidth]{AgainstMuon_4_29_16.pdf}
+      \includegraphics[width=0.30\textwidth]{AgainstMuon_eta_4_29_16.pdf}
+       \includegraphics[width=0.30\textwidth]{AgainstMuon_nvtx_4_29_16.pdf}
+    \end{tabular}
+    \caption{Efficiency of anti-muon discriminator (Loose3) as function of $p_{T}$, $\eta$, and number of vertices of generator-level taus }
+    \label{fig:ML3}
+  \end{figure}
+
+
+%\begin{figure}[tbh!]
+%    \centering
+%    \begin{tabular}{cc}
+%      \includegraphics[width=0.30\textwidth]{AgainstElectron_4_29_16.pdf}
+%      \includegraphics[width=0.30\textwidth]{AgainstElectron_eta_4_29_16.pdf}
+%       \includegraphics[width=0.30\textwidth]{AgainstElectron_nvtx_4_29_16.pdf}
+%    \end{tabular}
+%    \caption{Efficiency of anti-electron discriminator (Loose/Medium MVA5) as function of $p_{T}$, $\eta$, and number of vertices of generator-level taus }
+%    \label{fig:EM5}
+%  \end{figure}
+%
+%\begin{figure}[tbh!]
+%    \centering
+%    \begin{tabular}{cc}
+%      \includegraphics[width=0.30\textwidth]{CombinedIso_4_29_16.pdf}
+%      \includegraphics[width=0.30\textwidth]{CombinedIso_eta_4_29_16.pdf}
+%       \includegraphics[width=0.30\textwidth]{CombinedIso_nvtx_4_29_16.pdf}
+%    \end{tabular}
+%    \caption{Efficiency of isolation discriminator (''CombinedIsoDB3Hits'') as function of $p_{T}$, $\eta$, and number of vertices of generator-level taus }
+%    \label{fig:TIso}
+%  \end{figure}
+
+
+
+\subsection{Tau Energy Scale and Resolution}
+
+Since the resolution and scale of our mass reconstruction depends on the effectiveness of the $\tau_{h}$ reconstruction, in this section we summarize our studies on $\tau_{h}$ response and resolution. We define the response as the difference between the transverse momentum of a reconstructed tau (that has passed all tau ID discriminators) and the transverse momentum of a generated tau that has been matched ($\Delta R < 0.3$) to the reconstructed tau. We can see from Figure 9 (right) that the response distribution contains a narrow gaussian like component in the bulk, in addition to a relatively long tail (compared to electrons and muons). While the tails become less substantial at high $p_{T}$, the gaussian-like bulk of the response distributions broaden at high $p_{T}$.
+ 
+\begin{figure}[tbh!]
+  \centering
+  \begin{tabular}{cc}
+  \includegraphics[width=0.30\textwidth]{Tau2dResolution_4_29_16.pdf}
+  \includegraphics[width=0.30\textwidth]{TauResolution_500to750_4_29_16.pdf}
+  \end{tabular}
+  \caption{Energy response of reconstructed taus, raw and vs. generated tau $p_{T}$}
+  \label{fig:Tau2dResolution}
+\end{figure}
+
+
+%\begin{figure}[tbh!]
+%    \centering
+%    \begin{tabular}{cc}
+%      \includegraphics[width=0.30\textwidth]{PLOTS/diTauPlots/Efficiency/comparison2GenTauPtFull.png}
+%      \includegraphics[width=0.30\textwidth]{PLOTS/diTauPlots/Efficiency/comparison2GenTauEtaFull.png}
+%       \includegraphics[width=0.30\textwidth]{PLOTS/diTauPlots/Efficiency/comparison2GenTauPhiFull.png}
+%    \end{tabular}
+%    \caption{Full TauID efficiency  as function of $p_{T}$ and $\eta$ , $\phi$ of generator-level taus }
+%    \label{fig:Full}
+%  \end{figure}
+\fi

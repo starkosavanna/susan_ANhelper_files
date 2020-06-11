@@ -1,0 +1,308 @@
+\section{Electron + Muon Channel}\label{sec:eMu}
+%\textbf{Responsible: E. Laird, Z. Mao, U. Heintz}
+
+\subsection{Event selection}\label{sec:em_selection}
+
+The electron selection is identical to that described in
+Section~\ref{sec:et_selection}.  Muons are required to have:
+\begin{itemize}
+  \item $p_{T} > 10$ GeV and $\vert \eta \vert < 2.1$
+  \item distance of closest approach to the leading sum-$p_T^2$ 
+    primary vertex of less than 0.045~cm (transvese) and 0.2~cm (longitudinal)
+  \item satisfy the muon POG medium muon requirement
+\end{itemize}
+
+We build pairs of electrons and muons in which the electron and muon
+are separated by at least $\Delta R > 0.5$.  In events with more than
+one such pair, we select the pair with the two most isolated leptons,
+considering first the muon, and then the electron.  This criterion was
+seen to have good efficiency for signal samples.  In the rare case of
+multiple such pairs having identical isolation values, the
+reconstructed $p_T$'s are considred, preferring higher values.
+
+After a pair has been chosen for an event, we require both the
+electron and muon relative isolations to be $<0.15$, for an event to
+enter the signal region.  To reduce a possible Drell-Yan background,
+events are rejected if there is an additional electron satisfying the
+requirements described in Section~\ref{sec:et_selection} and with
+relative isolation $<0.3$, or an additional muon satisfying the above
+identification requirements with relative isolation $<0.3$. To further 
+reduce backgrounds, we require the electron and muon to have 
+opposite charge. The selection set mentioned above is defined as preselection.
+
+Following the preselection, as for the \thth channel, the signal 
+region is defined as having:
+\begin{itemize}
+  \item $\cos{\Delta \phi (e,\mu)}<-0.95$;
+  \item $\ETslash>30~\gev$;
+  \item $\cos{\Delta \phi (\pt\text{ leading lepton},\ETslash)}<-0.9$;
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)\quad.
+\end{itemize}
+
+The distributions of these variables after preselection, and after
+selection requirements on the other variables, are shown in
+Figure~\ref{fig:em_nm1_distributions}.
+
+\begin{figure}\centering
+  \includegraphics[width=0.31\textwidth]{figures/n_1/em/met_em}
+  \includegraphics[width=0.31\textwidth]{figures/n_1/em/cosDPhi_em}
+  \includegraphics[width=0.31\textwidth]{figures/n_1/em/nb_em}
+  \caption{\label{fig:em_nm1_distributions} (Data driven QCD with only statistical uncertainties) Distributions of the
+    variables used for \teth signal selection, after all other signal
+    selection requirements on variables other than the one plotted:
+    \ETslash (left), $\cos{\Delta \phi (e,\mu)}$ (middle, with $\cos{\Delta \phi (e, \mu)} > 0$) and $n_b$ (right).}
+\end{figure}
+
+\subsection{Genuine dilepton events}
+Studies of simulated events indicate that for Drell-Yan process, top
+quark single and pair production, and di-boson production, the
+reconstructed and selected muons and electrons are typically
+associated with genuine simulated leptons.  The nominal expected event
+rates are estimated by scaling the simulated samples by the best
+available cross sections, listed in Table~\ref{tab:mc_samples}, and by
+the integrated luminosity of the data samples.
+
+\subsubsection{Drell-Yan process}\label{sec:em_DY}
+Systematics for Drell-Yan process is estimated in an Drell-Yan rich 
+region with the following selections and shown in the left panel of 
+Figure~\ref{fig:em_dy_tt}:
+\begin{itemize}
+  \item $Q(e) \times Q(\mu) < 0$;
+  \item $\ETslash<30~\gev$;
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose);
+  \item $60~\gev <$ \meffemu $<150~\gev$\quad.
+\end{itemize}
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/ControlRegions/DY_check_em}
+  \includegraphics[width=0.45\textwidth]{figures/ControlRegions/ttbar_check_em}
+  \caption{\label{fig:em_dy_tt} (Data driven QCD with only statistical uncertainties) Distributions of \meffetau. Left:
+    validation region with $\ETslash<30~\gev$, $n_b = 0$ and $60<$ \gev \meffemu $<$ 150 GeV.  Right:
+    validation region with $n_b\geq1$.}
+\end{figure}
+
+The Drell-Yan production rate difference between data and MC is estimated to
+be:
+\begin{equation}\label{eq:DY}
+\frac{\text{Data - non-Drell-Yan backgrounds}}{\text{MC Drell-Yan}} = 0.98 \pm 0.05\%\quad.
+\end{equation}
+Thus, taking the largest two, whether it's the deviation from nominal or the 
+uncertainty, the Drell-Yan production rate systematic uncertainty is estimated 
+to be 5\%, which we apply to all final states.
+
+\subsubsection{$t\bar{t}$ and single top processes}\label{sec:em_tt}
+Systematics for $t\bar{t}$ and single top processes are estimated in a
+top quark rich region with the following selections and shown in the
+right panel of Figure~\ref{fig:em_dy_tt}:
+\begin{itemize}
+  \item $Q(e) \times Q(\mu) < 0$;
+  \item $\ETslash>30~\gev$;
+  \item $\cos{\Delta \phi (\pt\text{ leading lepton},\ETslash)}<-0.9$;
+  \item at least one jet with $p_T > 30\gev$ tagged as a b-jet (CSV loose).
+\end{itemize}
+As described in ~\ref{sec:mt_tt}, top pt reweighting is applied to simulated 
+\ttbar events. Good agreement between data and background predictions is 
+observed.
+The $t\bar{t}$ + single top data/MC overall agreement is estimated to be:
+\begin{equation}\label{eq:em_tt}
+\frac{\text{Data - other backgrounds}}{\text{$t\bar{t}$ + single top}} = 1.00 \pm 0.01 \quad.
+\end{equation}
+Thus, taking the largest two, whether it's the deviation from nominal or the 
+uncertainty, the $t\bar{t}$ + single top production rate systematic uncertainty 
+is estimated to be 1\%, which we apply to all final states.
+
+\subsubsection{Di-boson process}\label{section:diBoson}
+Di-boson processes are estimated using simulated MC samples. In order to 
+quantify the agreement between simulated and observed di-boson events, a 
+di-boson rich region is constructed with the following selections: 
+\begin{itemize}\label{table:diboson}
+  \item $Q(e) \times Q(\mu) < 0$;
+  \item $\ETslash>30~\gev$;
+  \item no jet with $p_T > 20\gev$;
+  \item $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} < -50$;
+  \item $\cos{\Delta \phi (\pt\text{ leading lepton},\ETslash)} > -0.9$;
+  \item \meffemu $>$ 200 GeV.
+\end{itemize}
+
+Additional to the usual electric charge and \ETslash requirements, events containing 
+jets with $p_T > 20\gev$ and $|\eta| < 2.1$ are vetoed to reduce $t\bar{t}$ 
+contamination. This serves as a tighter $t\bar{t}$ reduction as oppose to the 
+b-jet vetos. The motivation of $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} < -50$ 
+can be seen in the left panel of Fig \ref{fig:diBoson} which shows the 
+distribution of $P_{\zeta}- 3.1 \times P_{\zeta}^{vis}$. By cutting at -50, 
+we remove almost all the signal contamination while keeping ~50\% of the 
+di-boson events. The $\cos{\Delta \phi (\pt\text{ leading lepton},\ETslash)} > -0.9$ 
+cut ensures this control region is orthogonal to the signal region. Finally, 
+the \meffemu $>$ 200 GeV cut is chosen to reject Drell-Yan, QCD and W+jets events 
+and improve di-boson purity (63\%).
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/em/zeta}
+  \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/em/diBoson}
+  \caption{\label{fig:diBoson} (Data driven QCD with only statistical uncertainties) 
+Left: $P_{\zeta}- 3.1 \times P_{\zeta}^{vis}$ distribution after requiring $Q(e) \times Q(\mu) < 0$, 
+$\ETslash>30~\gev$ and no jet with $p_T > 20\gev$. 
+Right: \meffemu distribution after all the requirements mentioned in \ref{table:diboson}.}
+\end{figure}
+
+The right panel of Fig \ref{fig:diBoson} shows the \meffemu distribution after all 
+the requirements mentioned in \ref{table:diboson}. Overall, we see a reasonable agreement 
+between data and the expected backgrounds. The ratio between data and MC for di-boson 
+processes is estimated to be:
+
+\begin{equation}\label{eq:em_diboson}
+\frac{\text{Data - other backgrounds}}{\text{di-boson MC}} = 1.01 \pm 0.20 \quad.
+\end{equation}
+
+Taking the shape variation into consideration, we estimate a 20\% systematic uncertainty 
+for di-boson processes.
+
+To cross check the di-boson study, a WZ enrich region is constructed 
+with the following requirements:
+\begin{itemize}\label{table:diboson2}
+  \item $Q(e) \times Q(\mu) > 0$;
+  \item $\ETslash>30~\gev$;
+  \item at least three leptons with at least one electron and one muon;
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose);
+  \item \meffemu $>$ 200 GeV.
+\end{itemize}
+
+\begin{figure}\centering
+  \includegraphics[width=0.6\textwidth]{figures/backgroundEstimation/em/diboson_WZ}
+  \caption{\label{fig:diBoson2} (Data driven QCD with only statistical uncertainties) 
+\meffemu distribution after all the requirements mentioned in \ref{table:diboson2}.}
+\end{figure}
+
+By requesting at least three leptons and of the two selected carries the 
+same electric charge, most of Drell-Yan, W+jets and $t\bar{t}$ backgrounds 
+are rejected with a di-boson purity of 84\%. Fig \ref{fig:diBoson2} shows 
+the \meffemu distribution after all the requirements mentioned in 
+\ref{table:diboson2} where we see a good agreement between data and 
+the expected backgrounds. The ratio between data and MC for di-boson 
+processes in the WZ enriched region is estimated to be:
+
+\begin{equation}
+\frac{\text{Data - other backgrounds}}{\text{di-boson MC}} = 0.98 \pm 0.04 \quad.
+\end{equation}
+which agrees well with the results in equation \ref{eq:em_diboson}.
+
+\subsection{QCD multi-jet background}\label{sec:em_qcd}
+The estimation of the QCD background for the \tetm channel is directly
+analogous to that in the \teth and \tmth channels, except that the 
+sideband is defined by the muon isolation.  As shown in the left panel 
+of Fig. \ref{fig:em_bkgEstimation}, in order to achieve good QCD purity, 
+the relative isolation sideband of 0.15 to 1.0 was chosen. After the
+signal region selection the "Loose-to-Tight" scale factor is estimated
+to be: $0.23 \pm 0.05$ where this 23\% rate uncertainty is applied to
+the QCD process (in addition to the bin-by-bin systematic
+uncertainties).
+
+Table \ref{table:SF_QCD_em} shows the yields of data and MC samples in 
+isolated (muon iso $<$ 0.15) and anti-isolated (0.15 $<$ muon iso $<$ 1.0) 
+regions used for the calculation of the "Loose-to-Tight" scale factor.
+
+{\renewcommand{\arraystretch}{1.3}%
+\begin{table}
+   \caption{\label{table:SF_QCD_em} Event yields in isolated and anti-isolated regions used for the calculation of the "Loose-to-Tight" scale factor.}
+   \centering{
+     \begin{tabular}{ | l | c | c | }
+        \hline \hline
+        Process                         & muon relative iso $<$ 0.15  & 0.15 $<$ muon relative iso $<$ 1.0 \\ \hline
+        Z + jets                        & 27 $\pm$ 10               & 49 $\pm$ 14       \\ \hline
+        $t\bar{t}$                      & 26 $\pm$ 3                & 241 $\pm$ 8       \\ \hline
+        W + jets                        & 52 $\pm$ 39               & 209 $\pm$ 75      \\ \hline
+        DiBoson                         & 41 $\pm$ 3                & 6 $\pm$ 1         \\ \hline
+        non-QCD background              & 146 $\pm$ 40              & 505 $\pm$ 77      \\ \hline
+        Data                            & 370                       & 1490              \\ \hline \hline
+        Data - non-QCD background       & 224 $\pm$ 40              & 985.0 $\pm$ 77    \\ \hline
+        "Loose-to-Tight" scale factor   &  \multicolumn{2}{c|}{0.23 $\pm$ 0.05}           \\ \hline
+     \end{tabular}
+   }
+ \end{table}}
+
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/em/muonIso}
+  \includegraphics[width=0.45\textwidth]{figures/backgroundEstimation/em/WJets_MC}
+  \caption{\label{fig:em_bkgEstimation} (Data driven QCD with only statistical uncertainties) 
+Left: muon relative isolation with QCD estimated from same-sign region. 
+Right: W+jets MC closure test between isolated and anti-isolated events.}
+\end{figure}
+
+\subsection{W+jets background}
+\label{sec:em_w_bkg_validation}
+The W background is very small.  However, the W+jets simulated sample was not 
+generated with high statistics.  As a workaround, the W+jets shape is taken 
+from the simulated sample in the muon isolation sideband (muon relative 
+isolation from 0.15 to 1.0), and scaled to match the simulated yield in the 
+tight muon isolation (muon relative isolation $<$ 0.15).  The ``loose-to-tight'' 
+factor is $0.21 \pm 0.07$. Thus, we improve the statistics of the W+jets 
+template by $1/0.21 = 4.8$ times. A shape comparison of the \meffemu distribution 
+between the isolated and anti-isolated W+jets MC events is shown in the right 
+panel of Fig. \ref{fig:em_bkgEstimation}. As shown, the W+jets shape from the 
+isolation sideband does a reasonable job at modeling the shape of the isolated 
+region.
+
+\subsection{Validation of Background Estimations}
+Additional to the validation tests shown in Fig.~\ref{fig:em_dy_tt}, a test 
+to check the overall performance of the background estimations is constructed 
+by reverting the $\cos{\Delta \phi (e,\mu)}$ cut as the following:
+\begin{itemize}
+  \item $ -0.95 < \cos{\Delta \phi (e,\mu)} < 0$
+  \item $\ETslash>30~\gev$;
+  \item $\cos{\Delta \phi (\pt\text{ leading lepton},\ETslash)}<-0.9$;
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose)\quad.
+\end{itemize}
+
+Figure~\ref{fig:revertCosDPhi_em} shows the distributions of \meffemu, \ETslash, 
+electron \pt and muon \pt in the signal like region with the above set of selections. 
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth,page=3]{figures/ControlRegions/revertCosDPhi_em}
+  \includegraphics[width=0.45\textwidth,page=4]{figures/ControlRegions/revertCosDPhi_em}\\
+  \includegraphics[width=0.45\textwidth,page=1]{figures/ControlRegions/revertCosDPhi_em}
+  \includegraphics[width=0.45\textwidth,page=2]{figures/ControlRegions/revertCosDPhi_em}
+  \caption{\label{fig:revertCosDPhi_em} (Data driven QCD with only statistical uncertainties) 
+ Distributions with $-0.95 < \cos{\Delta \phi (e,\mu)} < 0$ selection. Top: left: 
+\meffemu right: \ETslash. Bottom: left: e \pt right: $\mu$ \pt.}
+\end{figure}
+
+%%Figure~\ref{fig:signalRegion_em} shows the distributions of \meffmtau in 
+Figure~\ref{fig:SignalRegionPlot_a} shows the distributions of \meffmtau in 
+the signal region.% with data blinded.
+
+%\begin{figure}\centering
+  %% \includegraphics[width=0.6\textwidth,page=1]{figures/signalRegion/em_blind}
+%  \includegraphics[width=0.6\textwidth,page=1]{figures/signalRegion/em}
+%  \caption{\label{fig:signalRegion_em} (Data driven QCD with only statistical uncertainties)
+% \meffemu distribution with signal region selections.}
+%\end{figure}
+
+
+\iffalse
+\subsection{Overlays of observations and SM predictions}
+\label{sec:em_overlays}
+
+The expected SM event yields in the signal region are shown in
+Figure~\ref{fig:em_sm_template_and_mt}.
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/bkgTemplate_ZPrime1500_em} \\
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/em_puweight_OS_signalRegion_mt_e_met}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/em_puweight_OS_signalRegion_mt_mu_met}
+  \caption{\label{fig:em_sm_template_and_mt} Top: predicted background
+    yields and observed event yields in the \tetm channel after signal
+    selection.  Bottom: distributions of transverse mass.}
+\end{figure}
+
+Distributions of \pt and $\eta$ are shown in Figure~\ref{fig:em_sr_pt_eta}.
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/em_puweight_OS_signalRegion_ePt}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/em_puweight_OS_signalRegion_eEta} \\
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/em_puweight_OS_signalRegion_mPt}
+  \includegraphics[width=0.45\textwidth]{figures/et-em/kinematicDistributions_unblind/em_puweight_OS_signalRegion_mEta}
+  \caption{\label{fig:em_sr_pt_eta} Distributions, after \tetm final
+    selection, of electron \pt (top left), electron pseudo-rapidity
+    (top right), muon \pt (bottom left), muon pseudo-rapidity (bottom
+    right).}
+\end{figure}
+\fi

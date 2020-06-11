@@ -1,0 +1,150 @@
+\section{Data and Monte Carlo Samples}\label{sec:samples}
+%\textbf{Responsible: Y. Oh, A. Saha, Z. Mao}
+
+The 13 TeV collision data collected by the CMS detector in year 2016 is used in this analysis. Table~\ref{table:datasamples} shows the collision datasets used. 
+The official JSON file is used to select ``good'' run ranges and lumi sections (Cert\_271036-284044\_13TeV\_03Feb2017ReReco\_Collisions16\_JSON.txt). The total integrated luminosity of the collision 
+data 
+samples is $35.9$ fb$^{-1}$.
+
+The official Spring miniAODv2 2016 MC samples are used for all Standard Model processes. The leading order generators, {\sc Pythia8} and {\sc Madgraph}, were 
+mainly used for signal and background MC production. The predicted background yields in simulation are determined using NLO or NNLO cross-sections, while the 
+signal yields and distributions in all plots shown in this AN were normalized using the leading order cross-sections shown in Table~\ref{tab:mc_samples}. 
+Table~\ref{tab:mc_samples} shows the entire list of the MC samples used for this analysis. 
+%In all cases, the NNLO cross sections are used for EWK processes. 
+%The cross sections used are summarized in Table~\ref{table:mcxsections}.
+
+\begin{table}[ht]	
+  \caption{Collision Data Samples} 
+  \centering{
+  \begin{tabular}{| l | c |} 
+  \hline\hline 
+	Physics Sample & Official CMS Datasets \\ [0.5ex] \hline 
+
+        \footnotesize Run 2016B SingleMu Run2016B-03Feb2017  & \footnotesize \it /SingleMuon/Run2016B-03Feb2017\_ver2-v2/MINIAOD \\
+        \footnotesize Run 2016C SingleMu Run2016C-03Feb2017  & \footnotesize \it /SingleMuon/Run2016C-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016D SingleMu Run2016D-03Feb2017  & \footnotesize \it /SingleMuon/Run2016D-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016E SingleMu Run2016E-03Feb2017  & \footnotesize \it /SingleMuon/Run2016E-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016F SingleMu Run2016F-03Feb2017  & \footnotesize \it /SingleMuon/Run2016F-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016G SingleMu Run2016G-03Feb2017  & \footnotesize \it /SingleMuon/Run2016G-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016Hv2 SingleMu Run2016H-03Feb2017& \footnotesize \it /SingleMuon/Run2016H-03Feb2017\_ver2-v1/MINIAOD \\
+        \footnotesize Run 2016Hv3 SingleMu Run2016H-03Feb2017& \footnotesize \it /SingleMuon/Run2016H-03Feb2017\_ver3-v1/MINIAOD \\
+
+\hline
+        \footnotesize Run 2016B SingleElectron Run2016B-03Feb2017  & \footnotesize \it /SingleElectron/Run2016B-03Feb2017-v3/MINIAOD \\
+        \footnotesize Run 2016C SingleElectron Run2016C-03Feb2017  & \footnotesize \it /SingleElectron/Run2016C-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016D SingleElectron Run2016D-03Feb2017  & \footnotesize \it /SingleElectron/Run2016D-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016E SingleElectron Run2016E-03Feb2017  & \footnotesize \it /SingleElectron/Run2016E-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016F SingleElectron Run2016F-03Feb2017  & \footnotesize \it /SingleElectron/Run2016F-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016G SingleElectron Run2016G-03Feb2017  & \footnotesize \it /SingleElectron/Run2016G-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016Hv2 SingleElectron Run2016H-03Feb2017& \footnotesize \it /SingleElectron/Run2016H-03Feb2017\_ver2-v1/MINIAOD \\
+        \footnotesize Run 2016Hv3 SingleElectron Run2016H-03Feb2017& \footnotesize \it /SingleElectron/Run2016H-03Feb2017\_ver3-v1/MINIAOD \\
+
+\hline 
+        \footnotesize Run 2016B Tau Run2016B-03Feb2017  & \footnotesize \it /Tau/Run2016B-03Feb2017-v3/MINIAOD \\
+        \footnotesize Run 2016C Tau Run2016C-03Feb2017  & \footnotesize \it /Tau/Run2016C-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016D Tau Run2016D-03Feb2017  & \footnotesize \it /Tau/Run2016D-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016E Tau Run2016E-03Feb2017  & \footnotesize \it /Tau/Run2016E-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016F Tau Run2016F-03Feb2017  & \footnotesize \it /Tau/Run2016F-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016G Tau Run2016G-03Feb2017  & \footnotesize \it /Tau/Run2016G-03Feb2017-v1/MINIAOD \\
+        \footnotesize Run 2016Hv2 Tau Run2016H-03Feb2017& \footnotesize \it /Tau/Run2016H-03Feb2017\_ver2-v1/MINIAOD \\
+        \footnotesize Run 2016Hv3 Tau Run2016H-03Feb2017& \footnotesize \it /Tau/Run2016H-03Feb2017\_ver3-v1/MINIAOD \\%\hline
+  \hline 
+  \hline 
+  \end{tabular}
+  }
+  \label{table:datasamples} % is used to refer this table in the text
+\end{table}
+
+\begin{table}[ht]	
+  \caption{MC Samples} 
+  \centering{
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{| l | c | c |} 
+  \hline\hline 
+	Process & cross-section (pb) & Official CMS Datasets (MINIAODSIM) \\ [0.5ex] \hline
+
+    \footnotesize $Z \to ll $   &  5765.4       & \footnotesize \it /DYJetsToLL\_M-50\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v2\\
+    mass binned                 &  7.67*1.031   & \footnotesize \it /DYJetsToLL\_M-200to400\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext2-v2\\
+    LO samples                  &  0.423*1.008  & \footnotesize \it /DYJetsToLL\_M-400to500\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                &  0.24*0.996   & \footnotesize \it /DYJetsToLL\_M-500to700\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                &  0.035*0.973  & \footnotesize \it /DYJetsToLL\_M-700to800\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                &  0.03*0.961   & \footnotesize \it /DYJetsToLL\_M-800to1000\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                &  0.016*0.938  & \footnotesize \it /DYJetsToLL\_M-1000to1500\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                &  0.002*0.882  & \footnotesize \it /DYJetsToLL\_M-1500to2000\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                &  0.00054*0.825& \footnotesize \it /DYJetsToLL\_M-2000to3000\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+    \hline 
+    \footnotesize $W + jets $   &  61526.7      &\scriptsize \it  /WJetsToLNu\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext2-v1\\
+    HT binned                   &  1345*1.21    &\scriptsize \it  /WJetsToLNu\_HT-100To200\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext2-v1\\
+    LO samples                  &  359.7*1.21   &\scriptsize \it  /WJetsToLNu\_HT-200To400\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext2-v1\\
+                                &  48.91*1.21   &\scriptsize \it  /WJetsToLNu\_HT-400To600\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                &  12.05*1.21   &\scriptsize \it  /WJetsToLNu\_HT-600To800\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                &  5.501*1.21   &\scriptsize \it  /WJetsToLNu\_HT-800To1200\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                &  1.329*1.21   &\scriptsize \it  /WJetsToLNu\_HT-1200To2500\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                &  0.03216*1.21 &\scriptsize \it  /WJetsToLNu\_HT-2500ToInf\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+    \hline 
+    \footnotesize $t \overline{t}$      &  831.76   &\scriptsize \it  /TT\_TuneCUETP8M2T4\_13TeV-powheg-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1\\
+    \footnotesize single Top samples    &  35.6     &\scriptsize \it  /ST\_tW\_antitop\_5f\_inclusiveDecays\_13TeV-powheg-pythia8\_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                        &  35.6     &\scriptsize \it  /ST\_tW\_top\_5f\_inclusiveDecays\_13TeV-powheg-pythia8\_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+                                        &  136.02   &\scriptsize \it  /ST\_t-channel\_top\_4f\_inclusiveDecays\_13TeV-powhegV2-madspin-pythia8\_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1\\
+                                        &  26.23    &\scriptsize \it  /ST\_t-channel\_antitop\_4f\_inclusiveDecays\_13TeV-powhegV2-madspin-pythia8\_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1\\
+                                        &  3.344    &\scriptsize \it  /ST\_s-channel\_4f\_leptonDecays\_13TeV-amcatnlo-pythia8\_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1\\
+
+    \hline 
+    \footnotesize $VV \to 2l 2\nu$   &  11.95   &\scriptsize \it  /VVTo2L2Nu\_13TeV\_amcatnloFXFX\_madspin\_pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+    \footnotesize $ZZ \to 2l 2q $    &  3.22    &\scriptsize \it  /ZZTo2L2Q\_13TeV\_amcatnloFXFX\_madspin\_pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1\\
+    \footnotesize $ZZ \to 4l $       &  1.256   &\scriptsize \it  /ZZTo4L\_13TeV\_powheg\_pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1\\
+    \footnotesize $WW \to l \nu 2q$  &  1.212   &\scriptsize \it  /WWToLNuQQ\_13TeV-powheg/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1\\
+    \footnotesize $WZ \to 2l 2q$     &  5.595   &\scriptsize \it  /WZTo2L2Q\_13TeV\_amcatnloFXFX\_madspin\_pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1\\
+    \footnotesize $WZ to 3l \nu$     &  4.708   &\scriptsize \it  /WZJToLLLNu\_TuneCUETP8M1\_13TeV-amcnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1\\
+    \footnotesize $WZ \to l 3\nu$    &  3.05    &\scriptsize \it  /WZTo1L3Nu\_13TeV\_amcatnloFXFX\_madspin\_pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1\\
+    \footnotesize $WZ \to l \nu 2q$  &  10.71   &\scriptsize \it  /WZTo1L1Nu2Q\_13TeV\_amcatnloFXFX\_madspin\_pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v3\\
+
+  \hline 
+  \hline 
+  \end{tabular}
+  }
+  }
+  \label{tab:mc_samples}
+\end{table}
+
+\begin{table}[ht]	
+  \caption{MC Signal Samples with Production Campaign: RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1} 
+  \centering{
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{| l | c | c | c |} 
+  \hline\hline 
+	Process (mass point [GeV])      & width[GeV]& cross-section (pb)& Official CMS Datasets (MINIAODSIM) \\ [0.5ex] \hline
+
+    \footnotesize $\text{SSM}~Z' (500)$    &  14.72707 & 5.751             &\scriptsize \it /ZprimeToTauTau\_M-500\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+    \footnotesize $\text{SSM}~ Z' (750)$    &  22.88971 & 1.236             &\scriptsize \it /ZprimeToTauTau\_M-750\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+    \footnotesize $\text{SSM}~ Z' (1000)$   &  30.97    & 0.3865            &\scriptsize \it /ZprimeToTauTau\_M-1000\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+    \footnotesize $\text{SSM}~ Z' (1250)$   &  39.02    & 0.149             &\scriptsize \it /ZprimeToTauTau\_M-1250\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+    \footnotesize $\text{SSM}~ Z' (1500)$   &  47.05    & 0.06479           &\scriptsize \it /ZprimeToTauTau\_M-1500\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+    \footnotesize $\text{SSM}~ Z' (1750)$   &  55.07    & 0.03104           &\scriptsize \it /ZprimeToTauTau\_M-1750\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+    \footnotesize $\text{SSM}~ Z' (2000)$   &  63.10    & 0.01583           &\scriptsize \it /ZprimeToTauTau\_M-2000\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+    \footnotesize $\text{SSM}~ Z' (2500)$   &  79.16    & 0.004684          &\scriptsize \it /ZprimeToTauTau\_M-2500\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+    \footnotesize $\text{SSM}~ Z' (3000)$   &  95.24    & 0.001592          &\scriptsize \it /ZprimeToTauTau\_M-3000\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+    \footnotesize $\text{SSM}~ Z' (3500)$   &  111.3    & 0.0005972         &\scriptsize \it /ZprimeToTauTau\_M-3500\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+    \footnotesize $\text{SSM}~ Z' (4000)$   &  127.5    & 0.0002447         &\scriptsize \it /ZprimeToTauTau\_M-4000\_TuneCUETP8M1\_13TeV-pythia8-tauola\\
+  \hline 
+  \hline 
+  \end{tabular}
+  }
+  }
+  \label{tab:signal_samples}
+\end{table}
+
+Because the MC simulated samples contain a pileup (PU) distribution that does not match that of data, 
+the MC needs to be properly weighted to fit the PU distribution observed in data. The reweighting 
+of MC events is performed by determining the probabilities to obtain $n$ interactions in data 
+($P_{data}(n)$) and MC ($P_{MC}(n)$) and using the event weights
+
+\begin{equation}
+   w_{PU}(n) = \frac{P_{data}(n)}{P_{MC}(n)}
+\label{eq:PUweight}
+\end{equation}
+
+to reweigh MC events based on the number of interactions. The recommended minbias cross-section of 69.2 $mb$ is used to determine these weights. 
+However, we note (as described in Section 5) that while the use of the recommended minbias cross-section results in relatively good agreement between data 
+and simulation in the bulk of the distribution for the number of primary vertices (Fig. 4), there remains a disagreement at the level of about 20\% 
+in the tails (events with roughly greater than 25 primary vertices).

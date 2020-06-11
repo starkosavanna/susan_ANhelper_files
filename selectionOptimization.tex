@@ -1,0 +1,110 @@
+\section{Selection Optimization}\label{sec:selectionOpt}
+
+Based on the set of signal region selections used in the $Z^\prime \rightarrow \tau\tau$ 
+search performed with data collected in 2015 \cite{ZprimeTauTau2015}:
+\begin{itemize}
+  \item $\cos{\Delta \phi (e,\tau_{h})}<-0.95$;
+  \item $\ETslash>30~\gev$;
+  \item no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose);
+  \item $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} > -50~\gev$,
+\end{itemize}
+optimizations were performed in attempts to improve the separation 
+of signal and background. Here $\hat{\zeta}$ is defined as the vector along 
+the bisector of visible tau decay products and two the projection variables 
+are defined as:
+\begin{equation}
+   p_{\zeta}^{vis} = \overrightarrow{p}_{\tau_{1}}^{vis}\hat{\zeta}+\overrightarrow{p}_{\tau_{2}}^{vis}\hat{\zeta}
+\label{eq:zetavis}
+\end{equation}
+\begin{equation}
+   p_{\zeta} = p_{\zeta}^{vis}+\overrightarrow{{E\!\!\!\!/_{\rm T}}}\hat{\zeta}
+\label{eq:zeta}
+\end{equation}
+
+With $Z^\prime$ excluded up to 3 TeV, the $\tau$s from hypothetical $Z^\prime$ 
+decays are most likely to be highly boosted and traveling in opposite directions. 
+Neutrinos from these highly boosted $\tau$ decays will also be energetic thus 
+resulting a non-trivial $\overrightarrow{{E\!\!\!\!/_{\rm T}}}$. In order to reject 
+$t\bar{t}$ and single top events, the b-jet veto requirement is also crucial. Thus, 
+keeping three of the four signal regions selections untouched, we focused on 
+improving the remaining selection, $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} > -50~\gev$.
+
+Neutrinos from highly boosted $\tau$s are likely to be colinear with the visible 
+products of the $\tau$ decay. For channels where one $\tau$ decays leptonically, either 
+to an electron or muon, and the other $\tau$ decays hadronically, the vectorial sum of 
+$\overrightarrow{{E\!\!\!\!/_{\rm T}}}$ is more likely to be aligned with the 
+reconstructed lepton since there are two neutrinos in this direction. As an example, 
+figure~\ref{fig:selectionMotiviation_cosDPhi2} shows, with the $\ETslash>30 \gev$, 
+$\cos{\Delta \phi (\mu,\tauh)}<-0.95$ and 0 b-jet requirements, the separation in 
+$\phi$ between the muon and \ETslash in the left panel and \tauh and \ETslash in the 
+right panel.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth,page=1]{figures/n_1/mt/cosDPhi_lep_met_mt}
+  \includegraphics[width=0.45\textwidth,page=2]{figures/n_1/mt/cosDPhi_lep_met_mt}
+  \caption{\label{fig:selectionMotiviation_cosDPhi2} (Data driven QCD and MC based W+Jets with only statistical uncertainties) 
+Left: Distribution of $\cos{\Delta \phi (\mu,\ETslash)}$. Right: Distribution of 
+$\cos{\Delta \phi (\tauh,\ETslash)}$}
+\end{figure}
+
+As expected, most of the signal events have their \ETslash aligned with the direction of 
+the reconstructed lepton. A requirement of $\cos{\Delta \phi (\mu,\ETslash)} > 0.9$ would 
+be sufficient in separating most of the background from signal. However, for a small 
+fraction of the signal events, the \ETslash is aligned with the direction of the reconstructed 
+\tauh. In order to recover these signal events, one would need to also accept events with 
+$\cos{\Delta \phi (\tauh,\ETslash)} > 0.9$ at the cost of including many W+jets background 
+events. One potential workaround, as demonstrated in section \ref{sec:signalRegionSelection}, 
+is to apply an addition $m_{\text{T}}(\mu,\ETslash) > 150$ requirements for events with 
+$\cos{\Delta \phi (\tauh,\ETslash)} > 0.9$. This additional $m_{\text{T}}$ requirement 
+guaranties a good signal acceptance while rejects most of the W+jets background.
+
+Using the correlation between \ETslash and the reconstructed objects, 
+$\cos{\Delta \phi (\mu,\ETslash)}$ and $\cos{\Delta \phi (\tauh,\ETslash)}$, 
+the following selections in table \ref{table:selectionsConsidered} were constructed and compared.
+{\renewcommand{\arraystretch}{1.5}%
+\begin{table}
+\begin{center}
+  \caption{selections considered \label{table:selectionsConsidered}}
+  \begin{tabular}{| l | c | c |}
+  \hline
+    Label in plot           & Color in plot     & Selections \\[0.5ex] \hline
+    pZeta cut               & Gray              & $P_{\zeta}- 3.1 \times P_{\zeta}^{vis} > -50$ \\ \hline
+                            &                   & $\cos{\Delta \phi (\mu,\ETslash)} > 0.9$ \\
+    orCosDPhi\_Met\_lep cut & Red               & or \\
+                            &                   & $\cos{\Delta \phi (\tauh,\ETslash)} > 0.9$ \\ \hline
+                            &                   & $\cos{\Delta \phi (\mu,(\vec{p}^{\mu}_{\text{T}} + \vec{p}^{\tauh}_{\text{T}}))} > 0.9$ \\
+    orCosDPhi\_Met\_delta cut & Green           & or \\
+                            &                   & $\cos{\Delta \phi (\tauh,(\vec{p}^{\mu}_{\text{T}} + \vec{p}^{\tauh}_{\text{T}}))} > 0.9$ \\ \hline
+    cosDPhi\_Met\_r cut     & Blue              & $ -1.05 < \cos{\Delta \phi (\mu,\ETslash)}/\cos{\Delta \phi (\tauh,\ETslash)} < -0.95$ \\ \hline
+    orCosDPhi\_Met\_lowerPt cut & Yellow        & $\cos{\Delta \phi (\text{sub-leading } p_{\text{T}}~\text{leg},\ETslash)} > 0.9$ \\ \hline
+                            &                   & $\cos{\Delta \phi (\mu,\ETslash)} > 0.9$ \\
+    orCosDPhi\_Met\_withMt cut & Purple         & or \\
+                            &                   & $\cos{\Delta \phi (\tauh,\ETslash)} > 0.9$  and $m_{\text{T}}(\mu,\ETslash) > 150$\\ \hline
+
+  \hline
+  \end{tabular}
+\end{center}
+\end{table}} \quad
+
+Fig \ref{fig:selectionMotiviation2} shows the background and signal \meffmtau distributions 
+after requiring $\cos{\Delta \phi (e,\tau_{h})}<-0.95$, $\ETslash>30~\gev$, no jet with 
+$p_T>30\gev$ tagged as a b-jet (CSV loose) and the set of considered selections mentioned in 
+table \ref{table:selectionsConsidered}. 
+
+Overall, the "orCosDPhi\_Met\_withMt" cut (colored purple) out performs the other selections 
+in rejecting background while maintaining a relatively high signal acceptance efficiency. 
+Thus, this cut is chosen for the $l + \tauh$ channels.
+
+\begin{figure}\centering
+  \includegraphics[width=0.45\textwidth]{figures/selections/bkg}
+  \includegraphics[width=0.45\textwidth]{figures/selections/Zprime_750}
+  \includegraphics[width=0.45\textwidth]{figures/selections/Zprime_1750}
+  \includegraphics[width=0.45\textwidth]{figures/selections/Zprime_3000}
+  \caption{\label{fig:selectionMotiviation2} Total background and signal 
+distributions with different selections after requiring: $\cos{\Delta \phi (e,\tau_{h})}<-0.95$;
+$\ETslash>30~\gev$; and no jet with $p_T>30\gev$ tagged as a b-jet (CSV loose). 
+Top left: The total background distribution of \meffmtau. Top right: Z'(750) 
+distribution of \meffmtau. Bottom left: Z'(1750) distribution of \meffmtau. 
+Bottom right: Z'(3000) distribution of \meffmtau}
+\end{figure}
+
